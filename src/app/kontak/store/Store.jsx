@@ -442,8 +442,8 @@ const [slopeAngle, setSlopeAngle] = useState('');
         {
           name: 'TB KARANGGAN JAYA',
           address: 'Jl Raya Karanggan No. 108',
-          address2: 'Desa Puspasari, Citeureup - Bogor',
-          address3: '16810',
+          address2: 'Desa Puspasari, Citeureup - Bogor 16810',
+          address3: '',
           telp: '',
           hp: '',
           wa: '087 877 121115',
