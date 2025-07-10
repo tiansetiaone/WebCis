@@ -440,11 +440,13 @@ const [slopeAngle, setSlopeAngle] = useState('');
       city: 'BOGOR',
       stores: [
         {
-          name: 'KARANGGAN JAYA',
-          address: 'Jl. Raya Karanggan No. 108',
-          address2: 'Citeureup, Bogor',
-          telp: '(021) 8757946',
-          hp: '0812 8000 278',
+          name: 'TB KARANGGAN JAYA',
+          address: 'Jl Raya Karanggan No. 108',
+          address2: 'Desa Puspasari, Citeureup - Bogor',
+          address3: '16810',
+          telp: '',
+          hp: '',
+          wa: '087 877 121115',
           maps: 'https://maps.app.goo.gl/hTwUg5wXagKci6eh9'
         },
       ],
@@ -775,9 +777,10 @@ const [slopeAngle, setSlopeAngle] = useState('');
                           >
                             {store.name}
                           </a>
-                          <p>{store.address}{store.address2 && <><br/>{store.address2}</>}</p>
+                          <p>{store.address}{store.address2 && <><br/>{store.address2}</>}{store.address3 && <><br/>{store.address3}</>}</p>
                           {store.telp && <p>Telp: {store.telp}</p>}
                           {store.hp && <p>HP: {store.hp}</p>}
+                          {store.wa && <p>Telp/Wa: {store.wa}</p>}
                         </div>
                       ))}
                     </div>
