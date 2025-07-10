@@ -1,0 +1,28 @@
+/* Mobile Styles (375px - 640px) */
+@media only screen and (max-width: 640px) {
+  .hero-slider-container {
+    height: 400px !important;
+    margin-top: 3rem !important;
+    margin-bottom: -4rem !important;
+  }
+
+  .hero-navigation {
+    display: none !important; /* Hide arrows on mobile */
+  }
+
+  .hero-slide-indicators {
+    bottom: 1.5rem !important;
+  }
+
+  .hero-slide-indicators button {
+    width: 20px !important;
+    height: 3px !important;
+  }
+
+  .hero-slide-indicators button.active {
+    width: 30px !important;
+  }
+  .parent-container {
+    height: 37rem;
+  }
+}

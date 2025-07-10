@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', sans-serif;
+}
+
+.box-link-list a:hover {
+  text-decoration: underline;
+}
+.list-latesupdate::after {
+  width: 1px;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+/* Custom Slick Carousel styles */
+.slick-prev:before,
+.slick-next:before {
+  color: #0B203F;
+  font-size: 24px;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+.slick-dots li button:before {
+  color: #9CA3AF;
+  font-size: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #0B203F;
+}
+
+/* styles/globals.css */
+select.language-switcher {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding-right: 1rem;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 1em;
+}
+
+
+@media (max-width: 640px) {
+  .slick-prev {
+    left: -15px;
+  }
+  .slick-next {
+    right: -15px;
+  }
+}
+
+/* Untuk layar sangat besar */
+@media (min-width: 1920px) {
+  .hero-section {
+    height: 60vh;
+    min-height: 800px;
+  }
+  
+  .product-categories {
+    gap: 4rem;
+  }
+  
+  .project-card {
+    max-width: 400px;
+  }
+}
+
+/* Untuk mobile */
+@media (max-width: 640px) {
+  .hero-section {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .product-categories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
