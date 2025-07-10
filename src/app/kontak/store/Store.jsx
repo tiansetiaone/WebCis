@@ -424,6 +424,32 @@ const [slopeAngle, setSlopeAngle] = useState('');
       ],
     },
     {
+      city: 'BOGOR',
+      stores: [
+        {
+          name: 'MAESTRO ATAP CIBUBUR',
+          address: 'Jl. Alternatif Cibubur No. 633b',
+          address2: 'Nagrak Kec. Gn Putri, Kab. Bogor',
+          telp: '',
+          hp: '0852 1881 8442',
+          maps: 'https://maps.app.goo.gl/2BpeKqf1sb1K9nT19'
+        },
+      ],
+    },
+    {
+      city: 'BOGOR',
+      stores: [
+        {
+          name: 'KARANGGAN JAYA',
+          address: 'Jl. Raya Karanggan No. 108',
+          address2: 'Citeureup, Bogor',
+          telp: '(021) 8757946',
+          hp: '0812 8000 278',
+          maps: 'https://maps.app.goo.gl/hTwUg5wXagKci6eh9'
+        },
+      ],
+    },
+    {
       city: 'TANGERANG',
       stores: [
         {
