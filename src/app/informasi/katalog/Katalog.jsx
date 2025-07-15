@@ -21,9 +21,9 @@ export default function Katalog() {
 
   // Data katalog
   const katalogList = [
-    { id: 1, nama: "Katalog Concrete Roof", image: "/images/Katalog cr.png", file: "/downloads/katalog/Katalog Concrete Roof Baru.pdf" },
-    { id: 2, nama: "Katalog Paving Block", image: "/images/Katalog pb.png", file: "/downloads/katalog/Katalog Paving Block Digital.pdf" },
-    { id: 3, nama: "Katalog Concrete Block", image: "/images/Katalog cb.png", file: "/downloads/katalog/Katalog Concrete Block Digital.pdf" },
+    { id: 1, nama: "Katalog Concrete Roof", image: "/images/katalog-concrete-roof.png", file: "/downloads/katalog/Katalog Concrete Roof Cisangkan.pdf" },
+    { id: 2, nama: "Katalog Paving Block", image: "/images/katalog-paving-block.png", file: "/downloads/katalog/Katalog Paving Block Cisangkan.pdf" },
+    { id: 3, nama: "Katalog Concrete Block", image: "/images/katalog-concrete-block.png", file: "/downloads/katalog/Katalog Concrete Block Cisangkan.pdf" },
     { id: 4, nama: "Katalog Concrete Pipe", image: "/images/Katalog cp.png", file: "/downloads/katalog/Katalog Concrete Pipe Baru.pdf" },
   ];
 
