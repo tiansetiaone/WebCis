@@ -264,7 +264,7 @@ const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
 };
 
 const terbaruList = [
-    {
+  {
     id: 1,
     image: "/images/thumbnail-visit.jpg",
     title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
@@ -275,7 +275,7 @@ const terbaruList = [
     id: 2,
     image: "/images/KBP CityRun.jpg",
     title: "CISANGKAN KBP CITY RUN 2025",
-    desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan...",
+    desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan..",
     link: "/blog/artikel/detail-a"
   },
   {
@@ -284,7 +284,7 @@ const terbaruList = [
     title: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
     desc: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun..",
     link: "/blog/artikel/detail-b"
-  }
+  },
 ];
 
 
