@@ -264,26 +264,26 @@ const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
 };
 
 const terbaruList = [
-  {
+    {
     id: 1,
-    image: "/images/KBP CityRun.jpg",
-    title: "CISANGKAN KBP CITY RUN 2025",
-    desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan..",
-    link: "/blog/artikel/detail-a"
+    image: "/images/thumbnail-visit.jpg",
+    title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
+    desc: "Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk ...",
+    link: "/blog/artikel/detail-c"
   },
   {
     id: 2,
+    image: "/images/KBP CityRun.jpg",
+    title: "CISANGKAN KBP CITY RUN 2025",
+    desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan...",
+    link: "/blog/artikel/detail-a"
+  },
+  {
+    id: 3,
     image: "/images/ultah50.jpg",
     title: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
     desc: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun..",
     link: "/blog/artikel/detail-b"
-  },
-  {
-    id: 3,
-    image: "/images/cisflashing.jpg",
-    title: "CIS Flashing: Solusi Flashing Moder",
-    desc: "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran..",
-    link: "/perusahaan/inovasi/detail-b"
   }
 ];
 
