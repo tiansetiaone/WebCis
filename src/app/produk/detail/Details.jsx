@@ -113,11 +113,11 @@ const calculateRequirement = () => {
     
     const usageValue = usagePerSqm ? extractHighestUsageValue(usagePerSqm) : 8;
     
-    if (calculationType === 'Luas Atap') {
+if (calculationType === 'Luas Atap') {
       calculatedResult = Math.ceil(value * usageValue);
     } else {
-      if (!slopeAngle || slopeAngle < 25 || slopeAngle > 45) {
-        alert('Mohon masukkan sudut kemiringan antara 25°-45°');
+      if (!slopeAngle || slopeAngle < 20 || slopeAngle > 75) {
+        alert('Mohon masukkan sudut kemiringan min 20°');
         return;
       }
       
@@ -126,7 +126,7 @@ const calculateRequirement = () => {
       const actualRoofArea = value / cosValue;
       calculatedResult = Math.ceil(actualRoofArea * usageValue);
     }
-    
+
     setResult(calculatedResult.toString());
   }
 };
@@ -308,14 +308,14 @@ const calculateRequirement = () => {
 
                     {calculationType === 'Luas Bangunan' && (
                       <div className="mb-4">
-                        <label className="font-bold block mb-2 text-xs">Sudut Kemiringan Atap:</label>
+                        <label className="font-bold block mb-2 text-xs 2xl:text-sm">Sudut Kemiringan Atap:</label>
                         <div className="flex border border-gray-300 rounded">
                           <input
                             type="number"
                             value={slopeAngle}
                             onChange={(e) => setSlopeAngle(e.target.value)}
                             className="px-3 py-2 w-full focus:outline-none text-xs"
-                            placeholder="25-45 derajat"
+                            placeholder="min 20 derajat"
                             min="0"
                             max="90"
                           />
