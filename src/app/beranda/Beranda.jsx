@@ -13,12 +13,12 @@ import '@/app/style/Beranda.css';
 // Hero Slides Data with URLs
 const heroSlides = [
   {
-    image: '/images/4.jpg',
-    url: '/blog/artikel/detail-b',
+    image: '/images/6.jpg',
+    url: '/blog/artikel/detail-d',
   },
   {
-    image: '/images/2.jpg',
-    url: '/blog/artikel/detail-a',
+    image: '/images/4.jpg',
+    url: '/blog/artikel/detail-b',
   },
   {
     image: '/images/1.jpg',
