@@ -1,0 +1,8 @@
+@media only screen and (max-width: 430px) {
+    .body-container {
+        padding-inline: 0;
+    }
+    .image-container {
+        min-height: 0;
+    }
+}
