@@ -2,6 +2,29 @@ import { saveToGoogleSheet } from '../../lib/googleSheets';
 import nodemailer from 'nodemailer';
 // import { Client } from 'whatsapp-web.js'; // opsional kalau mau WA
 
+
+// Fungsi untuk mendapatkan base URL dengan fallback
+function getBaseUrl(req) {
+  // Gunakan BASE_URL dari environment variables jika ada
+  if (process.env.BASE_URL) {
+    return process.env.BASE_URL;
+  }
+  
+  // Fallback: Gunakan Vercel URL jika tersedia
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  
+  // Fallback untuk development: Gunakan host dari request
+  if (process.env.NODE_ENV === 'development' && req) {
+    const host = req.headers.host;
+    return `http://${host}`;
+  }
+  
+  // Fallback terakhir
+  return 'https://cisangkan.com';
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
