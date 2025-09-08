@@ -7,6 +7,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import '@/app/style/Katalog.css';
 
 export default function Katalog() {
   // State untuk panel unduh
@@ -29,9 +30,9 @@ export default function Katalog() {
 
   const brosurList = [
     { id: 1, nama: "Flyer Roster R-21", image: "/images/Flyer Roster R-21.png", file: "/downloads/brosur/Flyer Roster R-21.pdf" },
-    { id: 2, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},
+    { id: 2, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer-Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},
     { id: 3, nama: "Flyer Truepave", image: "/images/Flyer Truepave.png", file: "/downloads/brosur/Flyer Truepave 3.pdf" },
-    { id: 4, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer Victoria & Dual Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
+    { id: 4, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer-Victoria&Dual-Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
     { id: 5, nama: "Flyer Neo Solar System", image: "/images/Flyer Neo Solar System-1.png", file: "/downloads/brosur/Flyer Neo Solar System.pdf" },
   ];
 
@@ -181,9 +182,9 @@ const handleDownload = async (e) => {
   const brosurSliderRef = useRef(null);
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-25">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/Banner Informasi.jpg"
           alt="banner katalog"
@@ -203,17 +204,17 @@ const handleDownload = async (e) => {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide 2xl:text-lg">
           <Link href="/informasi/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link>
           <Link href="/informasi/katalog" className="text-[#2D5DA6] font-bold">Katalog</Link>
         </nav>
       </div>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-sm sm:text-base mb-10">
         {/* Heading Katalog */}
         <div className="gap-6 items-start mb-10">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+          <h2 className="text-xl sm:text-xl 2xl:text-2xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
             KATALOG
           </h2>
         </div>
@@ -224,7 +225,7 @@ const handleDownload = async (e) => {
             {katalogList.map((item) => (
               <div key={item.id} className="px-2">
                 <div className="flex flex-col items-center text-center space-y-2">
-                  <div className="w-70 h-80 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
+                  <div className="w-70 h-80 2xl:w-90 2xl:h-120 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
                     <Image
                       src={item.image}
                       alt={item.nama}
@@ -233,10 +234,10 @@ const handleDownload = async (e) => {
                       className="object-cover w-full h-full"
                     />
                   </div>
-                  <p className="text-sm font-semibold">{item.nama}</p>
+                  <p className="text-sm 2xl:text-lg font-semibold">{item.nama}</p>
                   <button 
                     onClick={() => openDownloadPanel(item)}
-                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
+                    className="text-sm 2xl:text-lg text-blue-700 font-medium hover:underline mb-5"
                   >
                     Unduh &gt;&gt;
                   </button>
@@ -248,21 +249,21 @@ const handleDownload = async (e) => {
           {/* Navigation buttons */}
           <button 
             onClick={() => katalogSliderRef.current.slickPrev()}
-            className="absolute left-0 top-40 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+            className="absolute left-0 top-40 -translate-y-1/2 2xl:translate-y-8 -translate-x-6 z-10 w-8 h-8 2xl:w-14 2xl:h-14 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
           >
-            <FaChevronLeft className="w-5 h-5" />
+            <FaChevronLeft className="w-5 h-5 2xl:w-8 2xl:h-8" />
           </button>
           <button 
             onClick={() => katalogSliderRef.current.slickNext()}
-            className="absolute right-0 top-40 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+            className="absolute right-0 top-40 -translate-y-1/2 2xl:translate-y-8 translate-x-6 z-10 w-8 h-8 2xl:w-14 2xl:h-14 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
           >
-            <FaChevronRight className="w-5 h-5" />
+            <FaChevronRight className="w-5 h-5 2xl:w-8 2xl:h-8" />
           </button>
         </div>
 
         {/* Heading Brosur */}
-        <div className="gap-6 items-start mb-10">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+        <div id="brosur-section" className="gap-6 items-start mb-10">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5 2xl:text-2xl">
             BROSUR
           </h2>
         </div>
@@ -273,7 +274,7 @@ const handleDownload = async (e) => {
             {brosurList.map((item) => (
               <div key={item.id} className="px-2">
                 <div className="flex flex-col items-center text-center space-y-2">
-                  <div className="w-70 h-80 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
+                  <div className="w-70 h-80 2xl:w-90 2xl:h-120 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
                     <Image
                       src={item.image}
                       alt={item.nama}
@@ -282,10 +283,10 @@ const handleDownload = async (e) => {
                       className="object-cover w-full h-full"
                     />
                   </div>
-                  <p className="text-sm font-semibold">{item.nama}</p>
+                  <p className="text-sm 2xl:text-lg font-semibold">{item.nama}</p>
                   <button 
                     onClick={() => openDownloadPanel(item)}
-                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
+                    className="text-sm 2xl:text-lg text-blue-700 font-medium hover:underline mb-5"
                   >
                     Unduh &gt;&gt;
                   </button>
@@ -297,15 +298,15 @@ const handleDownload = async (e) => {
           {/* Navigation buttons */}
           <button 
             onClick={() => brosurSliderRef.current.slickPrev()}
-            className="absolute left-0 top-40 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+            className="absolute left-0 top-40 -translate-y-1/2 2xl:translate-y-8 -translate-x-6 z-10 w-8 h-8 2xl:w-14 2xl:h-14 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
           >
-            <FaChevronLeft className="w-5 h-5" />
+            <FaChevronLeft className="w-5 h-5 2xl:w-8 2xl:h-8" />
           </button>
           <button 
             onClick={() => brosurSliderRef.current.slickNext()}
-            className="absolute right-0 top-40 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+            className="absolute right-0 top-40 -translate-y-1/2 2xl:translate-y-8 translate-x-6 z-10 w-8 h-8 2xl:w-14 2xl:h-14 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
           >
-            <FaChevronRight className="w-5 h-5" />
+            <FaChevronRight className="w-5 h-5 2xl:w-8 2xl:h-8" />
           </button>
         </div>
       </section>
