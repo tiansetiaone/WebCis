@@ -229,7 +229,7 @@ export default async function handler(req, res) {
                     
                     <h3>Seberapa relevan informasi dalam dokumen ini dengan kebutuhan Anda saat ini?</h3>
                     <div class="options">
-                        <a href="${process.env.BASE_URL}/api/feedback?email=${encodeURIComponent(email)}&document=${encodeURIComponent(document)}&relevance=sangat" class="option-button">Sangat Relevan</a>
+                        <a href="${process.env.BASE_URL}/api/feedback?email=${encodedEmail}&document=${encodedDocument}&relevance=sangat" class="option-button">Sangat Relevan</a>
                         <a href="${process.env.BASE_URL}/api/feedback?email=${encodeURIComponent(email)}&document=${encodeURIComponent(document)}&relevance=cukup" class="option-button">Cukup Relevan</a>
                         <a href="${process.env.BASE_URL}/api/feedback?email=${encodeURIComponent(email)}&document=${encodeURIComponent(document)}&relevance=kurang" class="option-button">Kurang Relevan</a>
                         <a href="${process.env.BASE_URL}/api/feedback?email=${encodeURIComponent(email)}&document=${encodeURIComponent(document)}&relevance=tidak" class="option-button">Tidak Relevan</a>
