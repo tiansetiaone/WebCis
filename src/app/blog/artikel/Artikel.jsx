@@ -11,7 +11,7 @@ const artikelList = [
     tanggal: "11 September 2025",
     url: "/blog/artikel/detail-d",
     deskripsi: "Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya cabang lari / atletik pada tanggal 6 september 2025 dengan membawa semangat baru!",
-    gambar: "/images/KBP/landscape/IMG_1293.jpg",
+    gambar: "/images/KBP/landscape/IMG_1293.JPG",
   },
   {
     id: 2,
