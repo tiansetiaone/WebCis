@@ -203,7 +203,7 @@ export default function DetailD() {
     // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
       judul: "[RECAP] CISANGKAN KBP CITY RUN & CISANGKAN KBP SPEEDY KIDS 2025",
-      tanggal: "03 September 2025",
+      tanggal: "11 September 2025",
       gambar: "/images/KBP/landscape/IMG_1243.JPG",
       deskripsi: ""
     };
