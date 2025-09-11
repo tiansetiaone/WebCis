@@ -268,7 +268,7 @@ const terbaruList = [
     id: 1,
     image: "/images/KBP/landscape/IMG_1293.jpg",
     title: "[RECAP] CISANGKAN KBP CITY RUN 2025",
-    desc: " Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya..",
+    desc: "Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya..",
     link: "/blog/artikel/detail-d"
   },
   {
