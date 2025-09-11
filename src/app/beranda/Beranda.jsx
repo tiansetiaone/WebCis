@@ -264,19 +264,19 @@ const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
 };
 
 const terbaruList = [
-  {
+    {
     id: 1,
+    image: "/images/KBP/landscape/IMG_1293.jpg",
+    title: "[RECAP] CISANGKAN KBP CITY RUN 2025",
+    desc: " Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya..",
+    link: "/blog/artikel/detail-d"
+  },
+  {
+    id: 2,
     image: "/images/thumbnail-visit.jpg",
     title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     desc: "Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk ...",
     link: "/blog/artikel/detail-c"
-  },
-  {
-    id: 2,
-    image: "/images/KBP CityRun.jpg",
-    title: "CISANGKAN KBP CITY RUN 2025",
-    desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan..",
-    link: "/blog/artikel/detail-a"
   },
   {
     id: 3,
