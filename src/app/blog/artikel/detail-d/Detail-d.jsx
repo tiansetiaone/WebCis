@@ -3,6 +3,69 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+
+const landscapeImages = [
+  "/images/KBP/landscape/IMG_1120.jpg",
+  "/images/KBP/landscape/IMG_1198.jpg",
+  "/images/KBP/landscape/IMG_1231.jpg",
+  "/images/KBP/landscape/IMG_1243.jpg",
+  "/images/KBP/landscape/IMG_1273.jpg",
+  "/images/KBP/landscape/IMG_1293.jpg",
+  "/images/KBP/landscape/IMG_1328.jpg",
+  "/images/KBP/landscape/IMG_8434.jpg",
+  "/images/KBP/landscape/IMG_8435.jpg",
+  "/images/KBP/landscape/IMG_8436.jpg",
+  "/images/KBP/landscape/IMG_8437.jpg",
+  "/images/KBP/landscape/IMG_8438.jpg",
+  "/images/KBP/landscape/IMG_8439.jpg",
+  "/images/KBP/landscape/IMG_8440.jpg",
+  "/images/KBP/landscape/IMG_8441.jpg",
+  "/images/KBP/landscape/IMG_8442.jpg",
+  "/images/KBP/landscape/IMG_8443.jpg",
+  "/images/KBP/landscape/IMG_8444.jpg",
+  "/images/KBP/landscape/IMG_8445.jpg",
+  "/images/KBP/landscape/IMG_8446.jpg",
+  "/images/KBP/landscape/IMG_8447.jpg",
+  "/images/KBP/landscape/IMG_8448.jpg",
+  "/images/KBP/landscape/IMG_8449.jpg",
+  "/images/KBP/landscape/IMG_8450.jpg",
+  "/images/KBP/landscape/IMG_8451.jpg",
+  "/images/KBP/landscape/IMG_8452.jpg",
+  "/images/KBP/landscape/IMG_8453.jpg",
+  "/images/KBP/landscape/IMG_8454.jpg",
+  "/images/KBP/landscape/IMG_8455.jpg",
+  "/images/KBP/landscape/IMG_8456.jpg",
+  "/images/KBP/landscape/IMG_8457.jpg",
+];
+
+const portraitImages = [
+  "/images/KBP/potrait/IMG_1034.jpg",
+  "/images/KBP/potrait/IMG_1061.jpg",
+  "/images/KBP/potrait/IMG_1064.jpg",
+  "/images/KBP/potrait/IMG_1096.jpg",
+  "/images/KBP/potrait/IMG_1110.jpg",
+  "/images/KBP/potrait/IMG_1224.jpg",
+  "/images/KBP/potrait/IMG_1227.jpg",
+  "/images/KBP/potrait/IMG_1398.jpg",
+  "/images/KBP/potrait/IMG_1442.jpg",
+  "/images/KBP/potrait/IMG_1452.jpg",
+  "/images/KBP/potrait/IMG_1461.jpg",
+  "/images/KBP/potrait/IMG_8087.jpg",
+  "/images/KBP/potrait/IMG_8109.jpg",
+  "/images/KBP/potrait/IMG_8121.jpg",
+  "/images/KBP/potrait/IMG_8159.jpg",
+  "/images/KBP/potrait/IMG_8166.jpg",
+  "/images/KBP/potrait/IMG_8212.jpg",
+  "/images/KBP/potrait/IMG_8241.jpg",
+  "/images/KBP/potrait/IMG_8242.jpg",
+  "/images/KBP/potrait/IMG_8242.jpg",
+];
 
 const inovasiList = [
   {
@@ -139,9 +202,9 @@ export default function DetailD() {
   useEffect(() => {
     // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
-      judul: "CISANGKAN KBP CITY RUN 2025 - SPONSORSHIP",
+      judul: "[RECAP] CISANGKAN KBP CITY RUN & CISANGKAN KBP SPEEDY KIDS 2025",
       tanggal: "03 September 2025",
-      gambar: "/images/6.jpg",
+      gambar: "/images/KBP/landscape/IMG_1243.jpg",
       deskripsi: ""
     };
 
@@ -202,20 +265,104 @@ export default function DetailD() {
         </div>
 
         {/* Konten Deskripsi */}
-        <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b mb-5">
-          {data?.deskripsi ? (
-            <p>{data.deskripsi}</p>
-          ) : (
-            <>
-              <p><strong>"Run the Celebration!" </strong><br/> Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan.</p>
-              <p>Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan bangga mengumumkan kolaborasi istimewa dengan Kota Baru Parahyangan dalam penyelenggaraan Cisangkan KBP City Run 2025 pada hari sabtu 6 september 2025 di Bumi Hejo Kota Parahyangan. Acara ini bukan hanya sekadar lomba lari, tetapi juga merupakan perayaan dua tonggak sejarah penting:</p>
-              
-              <p>50 Tahun PT Cisangkan: Merayakan setengah abad dedikasi dalam industri paving dan genteng.</p>
+<div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b mb-5">
+  {data?.deskripsi ? (
+    <p>{data.deskripsi}</p>
+  ) : (
+    <>
+      <p><strong>Run the Celebration!</strong></p>
 
-              <p>25 Tahun Kota Baru Parahyangan: Mengenang seperempat abad perjalanan sebagai kota mandiri yang modern dan berkelanjutan.</p>
-            </>
-          )}
-        </div>
+      <p>
+        Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga 
+        khususnya cabang lari / atletik pada tanggal 6 september 2025 dengan membawa semangat baru!.
+      </p>
+
+      <p>
+        PT Cisangkan pada tahun ini ikut serta dalam memeriahkan event tahunan tersebut sebagai 
+        kolaborator utama yang akan menambah spesial dan semaraknya lomba lari tersebut.
+      </p>
+
+      <p>
+        Dengan kolaborasi PT Cisangkan dan KBP ini, sekaligus merayakan ulang tahun yang ke-50 tahun PT Cisangkan 
+        dan ulang tahun ke-25 tahun Kota Baru Parahyangan. Selaras dengan itu, tagline tahun ini adalah 
+        “Run the Celebration!” yang akan mengajak Runners semua merayakan pencapaian semangat sehat bersama.
+      </p>
+
+      <p>
+        Tidak hanya event olahraga adapula kemeriahan lain yang digelar yaitu acara hiburan seperti senam zumba 
+        dan performance dj serta diakhir acara diumumkan dari masing-masing peserta sesuai kategori run yang disediakan.
+      </p>
+
+      <p>
+        Pengunjung acara yang tidak mengikuti event lari bisa juga menikmati wisata kuliner dan melihat 
+        produk-produk unggulan dari berbagai sponsorship yang tersedia di beberapa booth yang terdapat di 
+        venue acara Cisangkan KBP City Run yang berlokasi di Bumi Hejo Kota Baru Parahyangan, Padalarang Kab. Bandung Barat.
+      </p>
+
+      <p>
+        Dan berikut beberapa momen yang berhasil diabadikan oleh kamera dari meriahnya acara 
+        Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025.
+      </p>
+
+     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-10">
+      {/* Kiri: Landscape */}
+      <div className="w-full">
+        <h2 className="text-lg font-semibold mb-4 text-[#333]">📸 Landscape Moments</h2>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          loop={true}
+          pagination={{ clickable: true }}
+          navigation
+          autoplay={{ delay: 3000 }}
+          modules={[Autoplay, Navigation, Pagination]}
+          className="rounded-2xl shadow-lg"
+        >
+          {landscapeImages.map((src, idx) => (
+            <SwiperSlide key={idx}>
+              <img
+                src={src}
+                alt={`Landscape ${idx + 1}`}
+                className="w-full h-[250px] md:h-[350px] object-cover rounded-2xl"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Kanan: Portrait */}
+      <div className="w-full">
+        <h2 className="text-lg font-semibold mb-4 text-[#333]">📱 Portrait Moments</h2>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          loop={true}
+          pagination={{ clickable: true }}
+          navigation
+          autoplay={{ delay: 4000 }}
+          modules={[Autoplay, Navigation, Pagination]}
+          className="rounded-2xl shadow-lg"
+        >
+          {portraitImages.map((src, idx) => (
+            <SwiperSlide key={idx}>
+              <img
+                src={src}
+                alt={`Portrait ${idx + 1}`}
+                className="w-full h-[350px] md:h-[500px] object-cover rounded-2xl"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+
+      <p>
+        Terima kasih atas partisipasi semua peserta pada event ini dan terkhusus kepada para sponsor yang telah ikut 
+        mendukung acara Cisangkan KBP City Run 2025 berjalan sukses.
+      </p>
+    </>
+  )}
+</div>
 
         {/* Daftar Proyek dalam 4 Kolom */}
         <div className="mb-10">
