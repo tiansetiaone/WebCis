@@ -19,6 +19,63 @@ export default function Katalog() {
   const [isDownloading, setIsDownloading] = useState(false);
   const modalRef = useRef(null);
   const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
+  // state tambahan
+const [emailError, setEmailError] = useState("");
+
+// fungsi validasi email
+const validateEmail = (email) => {
+  // Regex sederhana untuk format email
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+};
+
+const handleEmailChange = (e) => {
+  const value = e.target.value;
+  setEmail(value);
+
+  if (!validateEmail(value)) {
+    setEmailError("Format email tidak valid");
+    setEmailStatus("");
+  } else {
+    setEmailError("");
+    verifyEmailActive(value); // cek aktif
+  }
+};
+
+
+
+// Tambahan state loading untuk cek email aktif
+const [checkingEmail, setCheckingEmail] = useState(false);
+const [emailStatus, setEmailStatus] = useState(""); // pesan hijau/merah
+
+
+// Fungsi cek email aktif (panggil API route)
+const verifyEmailActive = async (email) => {
+  if (!validateEmail(email)) return; // hanya cek jika format valid
+  setCheckingEmail(true);
+  setEmailStatus(""); // reset status
+  try {
+    const res = await fetch(`/api/verify-email?email=${encodeURIComponent(email)}`);
+    const data = await res.json();
+
+    if (!data.isValid) {
+      setEmailError("Email tidak ditemukan / tidak aktif");
+      setEmailStatus("Email tidak aktif ❌");
+    } else {
+      setEmailError("");
+      setEmailStatus("Email aktif / tervalidasi ✅");
+    }
+  } catch (err) {
+    console.error(err);
+    setEmailError("Gagal memverifikasi email");
+    setEmailStatus("Gagal memverifikasi email ❌");
+  } finally {
+    setCheckingEmail(false);
+  }
+};
+
+
+
 
   // Data katalog
   const katalogList = [
@@ -82,7 +139,13 @@ const handleDownload = async (e) => {
       return;
     }
 
+       if (emailError || emailStatus.includes('tidak')) {
+  alert('Email tidak valid atau tidak aktif');
+  return;
+}
+
     setIsDownloading(true); // Set loading state to true
+
 
     try {
       // 1. Simpan data ke server
@@ -353,16 +416,43 @@ const handleDownload = async (e) => {
                     required
                   />
                 </div>
-                <div className="mb-4">
-                  <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    required
-                  />
-                </div>
+<div className="mb-4">
+  <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
+  <div className="relative">
+    <input
+      type="email"
+      value={email}
+      onChange={handleEmailChange}
+      className={`w-full px-3 py-2 border ${
+        emailError ? 'border-red-500' : 'border-gray-300'
+      } rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500`}
+      required
+    />
+    {checkingEmail && (
+      <span className="absolute right-3 top-3 text-xs text-gray-500">
+        Memeriksa…
+      </span>
+    )}
+  </div>
+
+  {/* error merah jika format salah */}
+  {emailError && (
+    <p className="mt-1 text-sm text-red-600">{emailError}</p>
+  )}
+
+  {/* notif status hijau/merah */}
+  {emailStatus && !emailError && (
+    <p
+      className={`mt-1 text-sm ${
+        emailStatus.includes('aktif') && !emailStatus.includes('tidak')
+          ? 'text-green-600'
+          : 'text-red-600'
+      }`}
+    >
+      {emailStatus}
+    </p>
+  )}
+</div>
                 <div className="mb-6">
                   <label className="block text-sm font-medium mb-1">Masukkan No Telp./Hp</label>
                   <input
