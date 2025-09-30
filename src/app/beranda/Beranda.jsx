@@ -13,12 +13,12 @@ import '@/app/style/Beranda.css';
 // Hero Slides Data with URLs
 const heroSlides = [
   {
-    image: '/images/6.jpg',
-    url: '/blog/artikel/detail-d',
-  },
-  {
     image: '/images/4.jpg',
     url: '/blog/artikel/detail-b',
+  },
+  {
+    image: '/images/Banner-TO.jpg',
+    url: '/blog/artikel/detail-e',
   },
   {
     image: '/images/1.jpg',
@@ -135,7 +135,7 @@ const proyekData = [
 // Video Testimonial Data
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  youtubeId: "ee86Me6eOx4",
+  youtubeId: "gCicPleRDaw",
   description: "Testimonial pelanggan utama kami"
 };
 
@@ -265,25 +265,25 @@ const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
 
 const terbaruList = [
     {
-    id: 1,
+    id: 3,
+    image: "/images/top-werk-square.jpg",
+    title: "Factory Visit - TOPWERK ASIA GATHERING 2025 di CISANGKAN",
+    desc: "Sebagai bagian dari perayaan HUT ke-50 kami, PT Cisangkan mendapat kehormatan untuk menyambut mitra..",
+    link: "/blog/artikel/detail-e"
+  },
+      {
+    id: 2,
     image: "/images/KBP/landscape/IMG_1293.JPG",
     title: "[RECAP] CISANGKAN KBP CITY RUN 2025",
     desc: "Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya..",
     link: "/blog/artikel/detail-d"
   },
   {
-    id: 2,
+    id: 1,
     image: "/images/thumbnail-visit.jpg",
     title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     desc: "Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk ...",
     link: "/blog/artikel/detail-c"
-  },
-  {
-    id: 3,
-    image: "/images/ultah50.jpg",
-    title: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
-    desc: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun..",
-    link: "/blog/artikel/detail-b"
   },
 ];
 
@@ -718,27 +718,29 @@ return (
     </div>
 
   </div>
-    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none">
-      <div className="relative w-full max-w-4xl aspect-video bg-gray-200 rounded-none overflow-hidden">
-      <div 
-  className="absolute inset-0 cursor-pointer"
-  onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
->
-  <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
-    <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-      <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-      </svg>
-    </div>
-  </div>
-<Image 
-  src="/images/factory Visit.png"
-  alt={mainTestimonialVideo.title}
-  fill
-  className="object-cover shadow-lg rounded-md"
-/>
-</div>
+    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 2xl:py-13 mb-5 2xl:h-205 rounded-none xl:px-40 2xl:px-60">
+<div className="relative w-full max-auto aspect-video bg-[#09172b] overflow-hidden max-w-screen-2xl">
+  <div 
+    className="absolute inset-0 cursor-pointer"
+    onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
+  >
+    <div className="absolute inset-0 flex items-center justify-center z-10">
+      <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md">
+        <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+        </svg>
       </div>
+    </div>
+    
+    {/* Image dengan zoom dan center tanpa crop */}
+    <Image 
+      src="/images/top-werk.jpg"
+      alt={mainTestimonialVideo.title}
+      fill
+      className="object-contain transition-transform duration-500 hover:scale-110"
+    />
+  </div>
+</div>
     </div>
     
     {/* Tombol Lihat Semua */}

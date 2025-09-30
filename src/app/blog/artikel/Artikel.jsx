@@ -5,16 +5,16 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const artikelList = [
-  {
-    id: 1,
-    judul: "[RECAP] CISANGKAN KBP CITY RUN 2025",
-    tanggal: "11 September 2025",
-    url: "/blog/artikel/detail-d",
-    deskripsi: "Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya cabang lari / atletik pada tanggal 6 september 2025 dengan membawa semangat baru!",
-    gambar: "/images/KBP/landscape/IMG_1293.JPG",
+   {
+    id: 5,
+    judul: "Factory Visit - TOPWERK ASIA GATHERING 2025 di CISANGKAN",
+    tanggal: "16 September 2025",
+    url: "/blog/artikel/detail-e",
+    deskripsi: "Sebagai bagian dari perayaan HUT ke-50 kami, PT Cisangkan mendapat kehormatan untuk menyambut mitra setia kami, HESS GROUP, dalam Seminar Agen Topwerk Asia yang diselenggarakan minggu lalu..",
+    gambar: "/images/top-werk-square.jpg",
   },
   {
-    id: 2,
+    id: 4,
     judul: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     tanggal: "11 Juli 2025",
     url: "/blog/artikel/detail-c",
@@ -29,14 +29,14 @@ const artikelList = [
     deskripsi: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan bangga mengumumkan kolaborasi istimewa dengan Kota Baru Parahyangan dalam penyelenggaraan Cisangkan KBP City Run 2025. Acara ini bukan hanya sekadar lomba lari, tetapi juga merupakan perayaan dua tonggak sejarah penting",
     gambar: "/images/KBP CityRun.jpg",
   },
-  // {
-  //   id: 4,
-  //   judul: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
-  //   tanggal: "16 Juni 2025",
-  //   url: "/blog/artikel/detail-b",
-  //   deskripsi: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun perjalanannya membangun Indonesia melalui inovasi dan kualitas di industri beton pracetak. Dengan mengusung semangat 'Bangga Berkarya, Bangga Indonesia', perusahaan ini menegaskan kembali komitmennya sebagai bagian dari kekuatan pembangunan nasional.",
-  //   gambar: "/images/ultah50.jpg",
-  // },
+  {
+    id: 2,
+    judul: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
+    tanggal: "16 Juni 2025",
+    url: "/blog/artikel/detail-b",
+    deskripsi: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun perjalanannya membangun Indonesia melalui inovasi dan kualitas di industri beton pracetak. Dengan mengusung semangat 'Bangga Berkarya, Bangga Indonesia', perusahaan ini menegaskan kembali komitmennya sebagai bagian dari kekuatan pembangunan nasional.",
+    gambar: "/images/ultah50.jpg",
+  },
   // {
   //   id: 4,
   //   judul: "CIS Flashing: Solusi Flashing Modern",
