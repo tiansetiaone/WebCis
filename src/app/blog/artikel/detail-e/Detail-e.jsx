@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { FaPlay, FaTimes } from 'react-icons/fa';
-import '@/app/style/Blog.css';
+
 
 // Video Data
 const mainArticleVideo = {
@@ -12,7 +12,7 @@ const mainArticleVideo = {
   description: "KUNJUNGAN PABRIK TOPWERK ASIA GATHERING 2025 KE PABRIK PT CISANGKAN – PURWAKARTA"
 };
 
-export default function DetailC() {
+export default function DetailE() {
   const [data, setData] = useState(null);
   const [showVideo, setShowVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
