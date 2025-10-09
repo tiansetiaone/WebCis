@@ -138,7 +138,7 @@ export default function DetailE() {
                   <FaPlay className="w-8 h-8 text-[#0B1F3A] pl-1" />
                 </div>
               </div>
-              
+
               <Image 
                 src={data.videoThumbnail}
                 alt={data.judul}

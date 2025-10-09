@@ -86,11 +86,13 @@ const verifyEmailActive = async (email) => {
   ];
 
   const brosurList = [
-    { id: 1, nama: "Flyer Roster R-21", image: "/images/Flyer Roster R-21.png", file: "/downloads/brosur/Flyer Roster R-21.pdf" },
-    { id: 2, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer-Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},
-    { id: 3, nama: "Flyer Truepave", image: "/images/Flyer Truepave.png", file: "/downloads/brosur/Flyer Truepave 3.pdf" },
-    { id: 4, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer-Victoria&Dual-Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
-    { id: 5, nama: "Flyer Neo Solar System", image: "/images/Flyer Neo Solar System-1.png", file: "/downloads/brosur/Flyer Neo Solar System.pdf" },
+    { id: 1, nama: "Flyer Atap Bitumen (Asphalt Shingles)", image: "/images/Flyer Bitumen.png", file: "/downloads/brosur/Flyer Atap Bitumen.pdf" },
+    { id: 2, nama: "Flyer Atap Modern", image: "/images/Atap Modern.jpg", file: "/downloads/brosur/Flyer Atap Modern.pdf" },
+    { id: 3, nama: "Flyer Roster R-21", image: "/images/Flyer Roster R-21.png", file: "/downloads/brosur/Flyer Roster R-21.pdf" },
+    { id: 4, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer-Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},
+    { id: 5, nama: "Flyer Truepave", image: "/images/Flyer Truepave.png", file: "/downloads/brosur/Flyer Truepave 3.pdf" },
+    { id: 6, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer-Victoria&Dual-Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
+    { id: 7, nama: "Flyer Neo Solar System", image: "/images/Flyer Neo Solar System-1.png", file: "/downloads/brosur/Flyer Neo Solar System.pdf" },
   ];
 
   // Handle click outside modal
