@@ -265,6 +265,13 @@ const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
 
 const terbaruList = [
     {
+    id: 4,
+    image: "/images/cismax.png",
+    title: "STRATEGIC PARTNERSHIP CISANGKAN & MAXXI",
+    desc: "Selasa, 7 Oktober 2025 menjadi momen penting bagi kami, di mana secara resmi memulai kolaborasi dengan Maxxi..",
+    link: "/blog/artikel/detail-f"
+  },
+    {
     id: 3,
     image: "/images/top-werk-square.jpg",
     title: "Factory Visit - TOPWERK ASIA GATHERING 2025 di CISANGKAN",
@@ -278,15 +285,7 @@ const terbaruList = [
     desc: "Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya..",
     link: "/blog/artikel/detail-d"
   },
-  {
-    id: 1,
-    image: "/images/thumbnail-visit.jpg",
-    title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
-    desc: "Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk ...",
-    link: "/blog/artikel/detail-c"
-  },
 ];
-
 
 
 export default function Beranda() {

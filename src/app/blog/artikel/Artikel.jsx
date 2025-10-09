@@ -6,6 +6,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const artikelList = [
    {
+    id: 6,
+    judul: "Kerja Sama Strategis: Cisangkan & Maxxi",
+    tanggal: "08 Oktober 2025",
+    url: "/blog/artikel/detail-f",
+    deskripsi: "Selasa, 7 Oktober 2025 menjadi momen penting bagi kami, di mana secara resmi memulai kolaborasi dengan Maxxi melalui acara Kick Off Kerja Sama Strategis, bertempat di Pabrik Cisangkan..",
+    gambar: "/images/cismax.png",
+  },
+   {
     id: 5,
     judul: "Factory Visit - TOPWERK ASIA GATHERING 2025 di CISANGKAN",
     tanggal: "16 September 2025",
@@ -13,8 +21,16 @@ const artikelList = [
     deskripsi: "Sebagai bagian dari perayaan HUT ke-50 kami, PT Cisangkan mendapat kehormatan untuk menyambut mitra setia kami, HESS GROUP, dalam Seminar Agen Topwerk Asia yang diselenggarakan minggu lalu..",
     gambar: "/images/top-werk-square.jpg",
   },
-  {
+ {
     id: 4,
+    judul: "[RECAP] CISANGKAN KBP CITY RUN 2025",
+    tanggal: "11 September 2025",
+    url: "/blog/artikel/detail-d",
+    deskripsi: "Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya cabang lari / atletik pada tanggal 6 september 2025 dengan membawa semangat baru!",
+    gambar: "/images/KBP/landscape/IMG_1293.JPG",
+  },
+  {
+    id: 3,
     judul: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     tanggal: "11 Juli 2025",
     url: "/blog/artikel/detail-c",
@@ -22,7 +38,7 @@ const artikelList = [
     gambar: "/images/thumbnail-visit.jpg",
   },
   {
-    id: 3,
+    id: 2,
     judul: "CISANGKAN KBP CITY RUN 2025",
     tanggal: "16 Juni 2025",
     url: "/blog/artikel/detail-a",
@@ -30,7 +46,7 @@ const artikelList = [
     gambar: "/images/KBP CityRun.jpg",
   },
   {
-    id: 2,
+    id: 1,
     judul: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
     tanggal: "16 Juni 2025",
     url: "/blog/artikel/detail-b",
