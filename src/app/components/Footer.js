@@ -3,6 +3,7 @@ import {
     FaFacebookF,
     FaTiktok,
     FaYoutube,
+    FaLinkedin,
 } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,8 +13,8 @@ export default function Footer() {
         <footer className="bg-[#0B203F] text-white px-6 py-8">
             {/* Mobile View */}
              <div className="md:hidden flex flex-col items-center text-center">
-                <div className="flex-col flex justify-center gap-3 mb-6">
-                    <div className="relative h-40 w-full">
+                <div className="flex-col flex items-center justify-center gap-3 mb-6">
+                    <div className="relative h-40 w-80">
                         <Image 
                             src="/logo50.png" 
                             alt="50th Anniversary" 
@@ -22,7 +23,7 @@ export default function Footer() {
                             priority
                         />
                     </div>
-                    <div className="relative h-8 w-24">
+                    <div className="relative h-8 w-40">
                         <Image 
                             src="/logo-sertifikasi.png" 
                             alt="Sertifikasi" 
@@ -37,11 +38,20 @@ export default function Footer() {
                     </div>
                 </div>
                 
-                <div className="flex justify-center gap-10 text-xs mb-6">
+                <div className="flex justify-center gap-5 text-xs mb-6">
+                    <a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                     <FaInstagram className="bg-white text-black rounded-full box-border size-6 p-1" />
-                    <FaFacebookF className="bg-white text-black rounded-full box-border size-6 p-1" />
-                    <FaTiktok className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/pt-cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white"
+                    ><FaLinkedin className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.facebook.com/cisangkan#" target="_blank" rel="noopener noreferrer" className="hover:text-white">   <FaFacebookF className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.tiktok.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer" className="hover:text-white">   <FaTiktok className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.youtube.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                     <FaYoutube className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
                 </div>
                 
                 <div className="text-xs mb-4">
@@ -55,7 +65,7 @@ export default function Footer() {
             <div className="hidden md:block max-w-8xl mx-auto px-15 ">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
                     {/* Logo & Sertifikasi */}
-                    <div className="md:w-1/3">
+                    <div className="md:w-1/3 mt-[-1rem]">
 <div className="relative w-40 2xl:w-60 h-auto" style={{ height: 'auto' }}>
                             <Image 
                                 src="/logo50.png" 
@@ -178,6 +188,9 @@ export default function Footer() {
                         <div className="flex gap-4 2xl:gap-6 text-xs">
                             <a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                 <FaInstagram className="cursor-pointer bg-white text-black rounded-full box-border size-5 p-1 2xl:size-7 hover:bg-blue-100 transition-colors" />
+                            </a>
+                            <a href="https://www.linkedin.com/company/pt-cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                                <FaLinkedin className="cursor-pointer bg-white text-black rounded-full box-border size-5 p-1 2xl:size-7 hover:bg-blue-100 transition-colors" />
                             </a>
                             <a href="https://www.facebook.com/cisangkan#" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                 <FaFacebookF className="cursor-pointer bg-white text-black rounded-full box-border size-5 p-1 2xl:size-7 hover:bg-blue-100 transition-colors" />
