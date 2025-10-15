@@ -13,6 +13,10 @@ import '@/app/style/Beranda.css';
 // Hero Slides Data with URLs
 const heroSlides = [
   {
+    image: '/images/banners/Banner Bitumen.jpg',
+    url: '/informasi/katalog',
+  },
+  {
     image: '/images/4.jpg',
     url: '/blog/artikel/detail-b',
   },
