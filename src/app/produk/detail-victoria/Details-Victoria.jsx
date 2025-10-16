@@ -172,7 +172,7 @@ const calculateRequirement = () => {
     
     const usageValue = usagePerSqm ? extractHighestUsageValue(usagePerSqm) : 8;
     
-if (calculationType === 'Luas Atap') {
+    if (calculationType === 'Luas Atap') {
       calculatedResult = Math.ceil(value * usageValue);
     } else {
       if (!slopeAngle || slopeAngle < 20 || slopeAngle > 75) {
@@ -200,18 +200,18 @@ if (calculationType === 'Luas Atap') {
         {currentProduct.category.toUpperCase()}
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar />
         
         <main className="w-full lg:w-5/6 flex flex-col">
           {/* Product Images and Details */}
-          <div className="flex flex-col lg:flex-row gap-8 mb-22">
+          <div className="flex flex-col lg:flex-row gap-8 2xl:gap-[21rem] mb-22">
             <div className="relative w-full max-w-md">
-              <div className="absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10">
+              <div className="absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10 2xl:text-2xl">
                 {currentProduct.name}
               </div>
               
-              <div className="relative aspect-square bg-white w-full flex items-center justify-center">
+              <div className="relative aspect-square bg-white w-full 2xl:w-180 flex items-center justify-center">
                 <Image 
                   src={activeThumbnail.largeImage}
                   alt={`Produk ${currentProduct.name}`} 
@@ -222,11 +222,11 @@ if (calculationType === 'Luas Atap') {
               </div>
               
               <div className="mt-4">
-                <div className="flex space-x-3">
+                <div className="flex space-x-3 2xl:gap-1">
                   {currentProduct.thumbnails.map((thumbnail) => (
                     <div 
                       key={thumbnail.id}
-                      className={`relative w-16 h-16 rounded-xs overflow-hidden cursor-pointer ${
+                      className={`relative w-16 h-16 2xl:w-30 2xl:h-30 rounded-xs overflow-hidden cursor-pointer ${
                         activeThumbnail.id === thumbnail.id 
                           ? 'ring-4 ring-blue-500' 
                           : 'border border-gray-300'
@@ -248,10 +248,10 @@ if (calculationType === 'Luas Atap') {
             {/* Product Specifications */}
             <div className="w-full lg:w-1/2 space-y-6 px-6">
               <section className='mb-14'>
-                <h2 className="text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI :</h2>
+                <h2 className="text-xl 2xl:text-2xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI :</h2>
                 <div className="space-y-3 pl-4">
                   {currentProduct.specifications.map((item, index) => (
-                    <div key={index} className="flex">
+                    <div key={index} className="flex 2xl:text-lg">
                       <p className="w-65  font-medium">{item.label}</p>
                       <p className="mr-2">:</p>
                       <p>{item.value}</p>
@@ -283,18 +283,18 @@ if (calculationType === 'Luas Atap') {
               <div className='pl-4 px-44'>
                 <button 
                   onClick={toggleCalculator}
-                  className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full"
+                  className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full 2xl:justify-center"
                 >
-                  <FaCalculator className="text-lg" />
+                  <FaCalculator className="text-lg 2xl:text-xl" />
                   Hitung Kebutuhan Genteng
                 </button>
               </div>
               <div className='pl-4 px-44'>
                 <a
-                  href="/informasi/katalog"
+                  href="/informasi/katalog#brosur-section"
                   className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"
                 >
-                  <FaCalculator className="text-lg" />
+                  <FaCalculator className="text-lg 2xl:text-xl" />
                   Unduh Brosur
                 </a>
               </div>
@@ -310,26 +310,26 @@ if (calculationType === 'Luas Atap') {
                       <FaTimes className="text-xl" />
                     </button>
 
-                    <h3 className="text-lg font-semibold text-center border-b border-b-gray-400 pb-6 mb-6">Kalkulator Genteng</h3>
+                    <h3 className="text-lg 2xl:text-xl font-semibold text-center border-b border-b-gray-400 pb-6 mb-6">Kalkulator Genteng</h3>
 
                     <div className="mb-6">
-                      <p className="text-xs font-bold mb-2">Hitungan dengan:</p>
+                      <p className="text-xs 2xl:text-sm font-bold mb-2">Hitungan dengan:</p>
                       <div className="space-y-2">
-                        <label className="flex items-center gap-2 text-xs">
+                        <label className="flex items-center gap-2 text-xs 2xl:text-sm">
                           <input
                             type="radio"
                             checked={calculationType === 'Luas Atap'}
                             onChange={() => handleCalculationTypeChange('Luas Atap')}
-                            className="h-3 w-3 text-[#0B203F] focus:ring-[#0B203F]"
+                            className="h-3 w-3 2xl:h-5 2xl:w-5 text-[#0B203F] focus:ring-[#0B203F]"
                           />
                           Luas Atap
                         </label>
-                        <label className="flex items-center gap-2 text-xs">
+                        <label className="flex items-center gap-2 text-xs 2xl:text-sm">
                           <input
                             type="radio"
                             checked={calculationType === 'Luas Bangunan'}
                             onChange={() => handleCalculationTypeChange('Luas Bangunan')}
-                            className="h-3 w-3 text-[#0B203F] focus:ring-[#0B203F]"
+                            className="h-3 w-3 2xl:h-5 2xl:w-5 text-[#0B203F] focus:ring-[#0B203F]"
                           />
                           Luas Bangunan
                         </label>
@@ -337,7 +337,7 @@ if (calculationType === 'Luas Atap') {
                     </div>
 
                     <div className="mb-4">
-                      <label className="font-bold block mb-2 text-xs">
+                      <label className="font-bold block mb-2 text-xs 2xl:text-sm">
                         {calculationType === 'Luas Atap' ? 'Luas Atap' : 'Luas Bangunan'}:
                       </label>
                       <div className="flex border border-gray-300 rounded">
@@ -373,7 +373,7 @@ if (calculationType === 'Luas Atap') {
 
                     {result && (
                       <div className='mb-6'>
-                        <p className="font-bold mb-2 text-xs">Anda Membutuhkan:</p>
+                        <p className="font-bold mb-2 text-xs 2xl:text-sm">Anda Membutuhkan:</p>
                         <div className="flex border border-gray-300 rounded">
                           <input
                             type="text"
@@ -452,33 +452,34 @@ if (calculationType === 'Luas Atap') {
 
           {/* Product Accesories */}
          <section className="mt-12">
-                     <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-2">AKSESORIS :</h2>
+                     <h2 className="text-xl 2xl:text-2xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-2">AKSESORIS :</h2>
                      
                      <div className="relative">
                        <button
                          onClick={prevSlide}
                          disabled={currentSlide === 0}
-                         className="absolute left-[1.5rem] top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
+                         className="absolute left-[1.5rem] top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-10 h-10 2xl:w-14 2xl:h-14 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
                        >
-                         <FaChevronLeft className="w-5 h-5" />
+                         <FaChevronLeft className="w-5 h-5 2xl:w-8 2xl:h-8" />
                        </button>
                        
                        <div
                          ref={sliderRef}
-                         className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5"
+                         className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5 2xl:gap-5 2xl:ml-2"
                        >
                          {currentProduct.accessories.map((product) => (
-                           <div key={product.name} className="snap-start min-w-0 ps-11 group">
-                             <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
-         <div className="relative w-full aspect-[4/3] bg-white overflow-hidden">
+                           <div key={product.name} className="snap-start min-w-0 ps-11 2xl:ps-22 group">
+                             <div className="w-50 2xl:w-65 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
+         <div className="relative w-full aspect-[4/3] 2xl:h-45 flex items-center justify-center bg-white overflow-hidden">
            <Image
              src={product.image}
              alt={product.name}
              fill
              className="object-scale-down transition-transform duration-500 group-hover:scale-105"
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
            />
          </div>
-                               <div className="w-full text-center text-sm font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
+                               <div className="w-full text-center text-sm 2xl:text-base font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
                                  {product.name}
                                </div>
                              </div>
@@ -489,9 +490,9 @@ if (calculationType === 'Luas Atap') {
 <button
   onClick={nextSlide}
   disabled={currentSlide >= Math.max(0, currentProduct.accessories.length - visibleSlides)}
-  className="absolute right-[1.5rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
+  className="absolute right-[1.5rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 2xl:w-14 2xl:h-14 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
 >
-  <FaChevronRight className="w-5 h-5" />
+  <FaChevronRight className="w-5 h-5 2xl:w-8 2xl:h-8" />
 </button>
                        
                        <style jsx>{`

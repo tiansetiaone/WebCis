@@ -1,0 +1,60 @@
+@media only screen and (max-width: 430px) {
+    .body-container {
+        padding-inline: 0;
+    }
+    .image-container {
+        min-height: 0;
+    }
+        .thumb-blog {
+        object-fit: fill;
+    }
+    .sponsor {
+        height: 7em;
+    }
+    .sponsor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .unduh-brosur {
+    padding-inline: 3rem;
+    }
+    .custom-kolase-video {
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+
+    /* Video tampil di atas */
+    .video-wrapper {
+      order: 1;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .video-container {
+      aspect-ratio: 9 / 11;
+      border-radius: 1rem;
+    }
+
+    .play-btn {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    /* Kolase di bawah video */
+    .kolase-wrapper {
+      order: 2;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      max-width: 100%;
+    }
+
+    .kolase-img {
+      height: 7rem; /* lebih kecil biar pas di layar kecil */
+      border-radius: 0.75rem;
+    }
+}

@@ -123,7 +123,7 @@ export default function DetailsCb() {
       {/* Header Section */}
       <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">{currentProduct.category.toUpperCase()}</div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar />
 
         <main className="w-full lg:w-5/6 flex flex-col">
@@ -131,22 +131,22 @@ export default function DetailsCb() {
           <div className="relative gap-8 mb-22">
             {/* Product Specifications */}
             <div className="w-auto lg:w-1/2 space-y-6 px-6">
-              <section className="mb-5 mt-5">
-                <div className="w-fit bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 mb-4">{currentProduct.name}</div>
-                <div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
+              <section className="mb-5 mt-4">
+                <div className="w-fit bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 mb-4 2xl:text-2xl">{currentProduct.name}</div>
+                <div className="w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
                   <table className="w-full border-collapse">
                     <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
-                      <tr className="bg-[#0B203F] text-white">
+                      <tr className="bg-[#0B203F] text-white text-sm 2xl:text-base">
                         <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
                         <th className="border border-gray-300 px-4 py-2 text-center">Produk</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
+                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi (cm)</th>
+                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Berat (Kg)</th>
                         {/* <th className="border border-gray-300 px-4 py-2 text-center w-30">Tebal</th> */}
                         {/* <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th> */}
-                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
+                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Pemakaian (bh/m²)</th>
                       </tr>
                     </thead>
-                    <tbody className="text-sm">
+                    <tbody className="text-sm 2xl:text-base">
   {activeItems.map((product) => {
     const dimensions = product.specifications.find((spec) => spec.label === "Dimensi" || spec.label === "Ukuran")?.value || "-";
     const weights = product.specifications
@@ -240,7 +240,7 @@ export default function DetailsCb() {
               </section> */}
 
               <div className="pl-1">
-                <a href="/informasi/katalog" className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2">
+                <a href="/informasi/katalog#brosur-section" className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2">
                   <FaCalculator className="text-lg" />
                   Unduh Brosur
                 </a>

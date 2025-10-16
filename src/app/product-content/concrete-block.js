@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import '@/app/style/ProductContent.css';
 
 export const ConcreteBlockContent = () => {
   // Data array untuk langkah-langkah pemasangan
@@ -51,13 +53,13 @@ export const ConcreteBlockContent = () => {
     <>
       {/* Spesifikasi Teknis */}
       <section className='mb-10'>
-        <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">
+        <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">
           SPESIFIKASI TEKNIS :
         </h2>
-        <ul className="text-sm leading-relaxed space-y-1 ps-9 list-disc">
+        <ul className="padding-cb text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-disc">
           <li className="ps-3">Bahan dasar campuran beton</li>
           <li className="ps-3">
-            Mutu Produk mengacu pada SNI 03 - 0349 - 1989 Kategori peringkat I
+            Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 03 - 0349 - 1989</Link> Kategori peringkat I
           </li>
           <li className="ps-3">
             Kuat tekan rata-rata 70 kg/cm²
@@ -66,24 +68,41 @@ export const ConcreteBlockContent = () => {
             Penyerapan air rata-rata 25%
           </li>
           <li className="ps-3">
-            Hasil uji insulasi bunyi mengacu pada SNI 03 - 6386 - 2000 dengan hasil Rw = 53 dB
+            <a 
+  href="/downloads/HasilTest-InsulasiBunyi-CB10.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="font-semibold hover:cursor-pointer hover:underline"
+>
+  Hasil uji insulasi bunyi
+</a> mengacu pada SNI 03 - 6386 - 2000 dengan hasil Rw = 53 dB
           </li>
           <li className="ps-3">
-            Hasil uji transmitansi thermal rata-rata mengacu pada SNI 03 - 6389 - 2000 dengan hasil OTTV (<em>overall thermal transfer value</em>) &lt; 45 watt/m² (<em>bangunan hemat energi</em>)
+                        <a 
+  href="/downloads/uji transmitasi thermal 2012.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="font-semibold hover:cursor-pointer hover:underline"
+>Hasil uji transmitansi thermal</a> rata-rata mengacu pada SNI 03 - 6389 - 2000 dengan hasil OTTV (<em>overall thermal transfer value</em>) &lt; 45 watt/m² (<em>bangunan hemat energi</em>)
           </li>
           <li className="ps-3">
-            Hasil ketahanan api mengacu pada SNI 1741 : 2008, dan mempunyai ketahanan api lebih dari 2 jam
+            <a 
+  href="/downloads/LHU PNBP BSB 2024 - 84 PT CISANGKAN 10092024_UJI TINGKAT KETAHANAN API-BATA BETON BERLUBANG .pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="font-semibold hover:cursor-pointer hover:underline"
+>Hasil ketahanan api</a> mengacu pada SNI 1741 : 2008, dan mempunyai ketahanan api lebih dari 2 jam
           </li>
         </ul>
       </section>
 
       {/* Cara Pemasangan */}
       <section className="mb-10">
-        <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">
+        <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">
           CARA PEMASANGAN :
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-8">
+        <div className="padding-cb2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 2xl:gap-y-5 2xl:gap-x-20 p-8">
           {installationSteps.map((step) => (
             <div
               key={step.id}
@@ -99,8 +118,8 @@ export const ConcreteBlockContent = () => {
                 />
               </div>
                             <div className="w-full text-sm px-4 py-3 leading-relaxed">
-                <strong className="block mb-1">{step.title}</strong>
-                <p className='text-justify'>{step.description}</p>
+                <strong className="block mb-1 2xl:text-lg">{step.title}</strong>
+                <p className='text-justify 2xl:text-sm'>{step.description}</p>
               </div>
             </div>
           ))}

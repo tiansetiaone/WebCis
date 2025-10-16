@@ -1,7 +1,7 @@
 export const productsContent = {
   // Concrete Roof Products
-  'Neo Solar System': {
-    name: 'NEO',
+  'Genteng Neo (Premium)': {
+    name: 'GENTENG NEO (PREMIUM)',
     category: 'Concrete Roof',
     thumbnails: [
       {
@@ -242,7 +242,7 @@ export const mainProducts = [
 
 export const subProducts = {
   'Concrete Roof': [
-    'Neo Solar System', 'Dual Slate', 'Floral', 'Victoria Series', 
+    'Genteng Neo (Premium)', 'Dual Slate', 'Floral', 'Victoria Series', 
     'Genteng Gelombang'
   ],
   'Paving Block': [

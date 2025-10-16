@@ -12,6 +12,7 @@ import Image from 'next/image';
 import BannerProduk from '../../components/BannerProduk';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useSearchParams } from 'next/navigation';
+import '@/app/style/Produk.css';
 
 export default function ProductPv() {
   const searchParams = useSearchParams();
@@ -73,14 +74,14 @@ export default function ProductPv() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800">
       <BannerProduk kategori={activeItem} />
 
       <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">
         {activeItem.toUpperCase()}
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar onItemChange={setActiveItem} />
 
         <main className="w-full lg:w-5/6 space-y-8 ps-5 pe-5">

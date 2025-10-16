@@ -85,6 +85,15 @@
     padding-left: 0.5rem !important;
   }
 
+  .video-title p {
+    font-size: 13px !important;
+  }
+
+  .video-title a {
+    font-size: 11px !important;
+  }
+
+
   .hline {
     font-size: 1.3rem !important;
     line-height: 1.3 !important;
@@ -190,25 +199,47 @@ padding: 0 1.8rem;
 }
 
 
-.cover-video{
-width: 20rem
-}
+  .cover-video {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
-.grid-vd {
-        gap: 13rem;
-        width: 20rem;
-}
+  .grid-vd {
+    grid-auto-columns: calc(100% / 2) !important; /* Tampilkan 2 item per layar */
+    gap: 16px !important; /* Kurangi jarak antar item */
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 
-.cover-video2{
-width:20 rem
-}
+
+  .cover-video2 {
+    height: 130px !important;
+  }
+
+
 .prevVideoSlide {
 margin-left: 1.5rem;
+    width: 30px !important;
+    height: 30px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
 }
 
 .nextVideoSlide {
 margin-right: 1.5rem;
+    width: 30px !important;
+    height: 30px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
 }
+
+  .prevVideoSlide svg,
+  .nextVideoSlide svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
 .section-container {
 width: 14rem;
 }
@@ -221,7 +252,7 @@ width: 4rem;
 }
 
 /* Additional small mobile adjustments (375px and below) */
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 430px) {
   .video-slider-container {
     grid-auto-columns: calc(100% / 1.2) !important;
   }
@@ -233,6 +264,81 @@ width: 4rem;
 
   .hero-slide-indicators button.active {
     width: 30px !important;
+  }
+  .title-vid1 {
+    padding-inline: 1rem;
+  }
+    .title-vid1 p {
+    text-align: justify;
+    padding-right: 1rem;
+  }
+  .product-categories-section {
+    margin-top: -5rem;
+  }
+  .logo-ecommerce {
+    padding-inline: 5rem;
+  }
+  .section-container {
+        height: 8rem;
+        width: 9rem;
+        position: relative;
+        right: -30%;
+  }
+  .container-shortcut {
+        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-inline: 1.1rem;
+  }
+  .icon-rounded-product {
+    width: 7rem;
+    height: 7rem;
+  }
+  .icon-categories {
+    width: 5rem;
+    height: 4rem;
+  }
+  .title-vidtesti {
+  padding-left: 0.5em;
+  }
+  .cover-video {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .container-slider-vd {
+    padding: 0 12px !important;
+  }
+  .link-allvideo {
+  padding-inline: 1rem;
+}
+  .grid-vd {
+        grid-auto-columns: 100% !important;
+        gap: 25px !important;
+        margin-left: 1.5rem;
+  }
+ .video-title p {
+    font-size: 12px !important;
+  }
+
+  .video-title a {
+    font-size: 10px !important;
+  }
+
+  .prevVideoSlide,
+  .nextVideoSlide {
+    width: 26px !important;
+    height: 59px !important;
+  }
+
+  .prevVideoSlide svg,
+  .nextVideoSlide svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .cover-video2 {
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important; /* Alternatif responsif */
   }
 }
 

@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaPhone } from 'react-icons/fa';
 import { FaCalculator, FaTimes } from 'react-icons/fa';
 import { productsPb2Content, concreteTileSubItems } from '../../../../content-bank/products-pb2';
 import Link from 'next/link';
@@ -140,7 +140,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
         {currentProduct.category.toUpperCase()}
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar />
         
         <main className="w-full lg:w-5/6 flex flex-col">
@@ -148,14 +148,30 @@ const handleThumbnailClick = (productId, thumbIndex) => {
           <div className="relative gap-8 mb-22">
             {/* Product Specifications */}
             <div className="w-auto lg:w-1/2 space-y-6 px-6">
-              <section className='mb-5 mt-5'>
- <div className="w-fit bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 mb-4">
-  {currentProduct.name}
+              <section className='mb-5'>
+<div className="flex items-center gap-2 h-20"> {/* memastikan alignment vertikal */}
+  {/* Container Teks */}
+  <div className="flex items-center justify-center min-w-max bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 h-[40px] 2xl:text-2xl">
+    {currentProduct.name}
+  </div>
+
+  {/* Container Ikon */}
+{/* {(currentProduct.name === 'CONCRETE TILE') && (
+                    <div className="flex items-center h-[40px]">
+                      <Image
+                        src="/icons/app verif.png"
+                        alt="application verified"
+                        width={100}
+                        height={40}
+                        className="object-contain"
+                      />
+                    </div>
+                  )} */}
 </div>    
   {/* Spesifikasi Teknis */}
   <section className="mb-15">
-    <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
-    <ul className="list-disc pl-8 text-sm text-gray-700 space-y-1">
+    <h2 className="text-xl sm:text-xl 2xl:text-2xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
+    <ul className="list-disc pl-8 text-sm 2xl:text-base text-gray-700 space-y-1">
       {currentProduct.specifications?.map((item, index) => (
         <li key={index}>{item.value}</li>
       ))}
@@ -164,32 +180,32 @@ const handleThumbnailClick = (productId, thumbIndex) => {
 
   {/* Spesifikasi Sandstein */}
   <section className="mb-15">
-    <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS SANDSTEIN :</h2>
-    <ul className="list-disc pl-8 text-sm text-gray-700 space-y-1">
+    <h2 className="text-xl sm:text-xl 2xl:text-2xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS SANDSTEIN :</h2>
+    <ul className="list-disc pl-8 text-sm 2xl:text-base text-gray-700 space-y-1">
       {currentProduct.technicalSpecs?.map((item, index) => (
         <li key={index}>{item.value}</li>
       ))}
     </ul>
-    <ul className="pl-8 text-sm text-gray-700 space-y-1">
+    <ul className="pl-8 text-sm 2xl:text-base text-gray-700 space-y-1">
       {currentProduct.technicalSpecs2?.map((item, index) => (
         <li key={index}>{item.value}</li>
       ))}
     </ul>
   </section>
-<div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
+<div className="w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
   <table className="w-full border-collapse">
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
-  <tr className="bg-[#0B203F] text-white">
+  <tr className="bg-[#0B203F] text-white text-sm 2xl:text-base">
     <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-30">Produk</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-40 2xl:w-30">Dimensi (cm)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-20 2xl:w-30">Berat (Kg)</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-20">Warna</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-30">Pemakaian</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-30">Pemakaian (bh/m²)</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-20">Aplikasi</th>
   </tr>
 </thead>
-      <tbody className='text-sm'>
+      <tbody className='text-sm 2xl:text-base'>
   {concreteTileSubItems.map((product) => {
     const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value.split('/').map(w => w.trim()) || ['-'];
     const weights = product.specifications.find(spec => spec.label === 'Berat')?.value.split('/').map(w => w.trim()) || ['-'];
@@ -251,7 +267,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
           <div key={col} className="flex-1 px-2 first:pl-0 last:pr-0">
             <div className="space-y-2">
               {colItems.map((thumbnail, index) => (
-                <div key={startIndex + index} className="relative w-30 h-30 mx-auto">
+                <div key={startIndex + index} className="relative w-30 h-30 2xl:w-70 2xl:h-40 mx-auto">
                   <Image
                     src={thumbnail.thumbImage}
                     alt={`${product.name} - ${startIndex + index + 1}`}
@@ -298,7 +314,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
             </td>
 <td className="border border-gray-300 px-4 py-2 text-center relative">
   {application ? (
-    <div className="flex gap-1 justify-center">
+    <div className="flex gap-1 2xl:gap-3 justify-center">
       {Array.isArray(application.icons?.[0]) 
         ? application.icons[i]?.map((icon, iconIndex) => (
             <div 
@@ -315,19 +331,19 @@ const handleThumbnailClick = (productId, thumbIndex) => {
               onMouseLeave={() => setHoveredIcon(null)}
             >
               {icon === 'pedestrian' ? (
-                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4 2xl:w-4 2xl:h-6" />
               ) : icon === 'car' ? (
-                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4 2xl:w-7 2xl:h-7" />
               ) : icon === 'garage' ? (
-                <img src="/icons/garage.png" alt="garage" className="w-4 h-4" />
+                <img src="/icons/garage.png" alt="garage" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ): icon === 'lorry' ? (
-                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
+                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'fuso' ? (
-                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
+                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'factory' ? (
-                <img src="/icons/factory.png" alt="factory" className="w-4 h-4" />
+                <img src="/icons/factory.png" alt="factory" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'harbor' ? (
-                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
+                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : null}
               
               {hoveredIcon === icon && (
@@ -359,9 +375,9 @@ const handleThumbnailClick = (productId, thumbIndex) => {
               onMouseLeave={() => setHoveredIcon(null)}
             >
               {icon === 'pedestrian' ? (
-                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4 2xl:w-4 2xl:h-6" />
               ) : icon === 'car' ? (
-                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4 2xl:w-4 2xl:h-6" />
               ) : null}
               
               {hoveredIcon === icon && (
@@ -408,14 +424,23 @@ const handleThumbnailClick = (productId, thumbIndex) => {
                   ))}
                 </div>
               </section> */}
-<div className='pl-1'>
+<div className='pl-1 flex gap-5'>
   <a
-    href="/informasi/katalog"
+    href="/informasi/katalog#brosur-section"
     className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
   >
     <FaCalculator className="text-lg" />
     Unduh Brosur
   </a>
+{(currentProduct.name === 'CONCRETE TILE') && (
+                  <a
+                    href="/kontak" // Diarahkan ke halaman kontak
+                    className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
+                  >
+                    <FaPhone className="text-lg" />
+                    Jasa Pemasangan
+                  </a>
+                )}
 </div>
             </div>
           </div>

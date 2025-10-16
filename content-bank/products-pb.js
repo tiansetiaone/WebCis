@@ -11,19 +11,19 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5  / 2,9  / 3,3  / 4,3 ' },
+      { label: 'Tebal', value: '6  / 6+  / 8  / 10 ' },
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (2.5 kg)
-          ['car', 'lorry'],         // Untuk 6+ cm (2.9 kg)
-          ['car', 'lorry'],         // Untuk 8 cm (3.3 kg)
-          ['fuso', 'factory', 'harbor']          // Untuk 10 cm (4.3 kg)
+          ['pedestrian', 'car'],  // Untuk 6  (2.5 )
+          ['car', 'lorry'],         // Untuk 6+  (2.9 )
+          ['car', 'lorry'],         // Untuk 8  (3.3 )
+          ['fuso', 'factory', 'harbor']          // Untuk 10  (4.3 )
         ]
       },
-      { label: 'Pemakaian', value: '49 bh/m²' },
+      { label: 'Pemakaian', value: '49 ' },
      { label: 'Best Seller', icon: '/icons/BS.png' }
     ],
     technicalSpecs: [
@@ -46,17 +46,17 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg / 1,7 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '10 x 10 ' },
+      { label: 'Berat', value: '1,3  / 1,7 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (1.3 kg)
-          ['pedestrian', 'car']   // Untuk 8 cm (1.7 kg)
+          ['pedestrian', 'car'],  // Untuk 6  (1.3 )
+          ['pedestrian', 'car']   // Untuk 8  (1.7 )
         ]
       },
-      { label: 'Pemakaian', value: '98 bh/m²' },
+      { label: 'Pemakaian', value: '98 ' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -79,17 +79,17 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '28 x 20 x 10 cm' },
-      { label: 'Berat', value: '6,24 kg / 8,25 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '28 x 20 x 10 ' },
+      { label: 'Berat', value: '6,24  / 8,25 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (6.24 kg)
-          ['car', 'fuso']         // Untuk 8 cm (8.25 kg)
+          ['pedestrian', 'car'],  // Untuk 6  (6.24 )
+          ['car', 'fuso']         // Untuk 8  (8.25 )
         ]
       },
-      { label: 'Pemakaian', value: '20 bh/m²' },
+      { label: 'Pemakaian', value: '20 ' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -112,17 +112,17 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '20 x 20 cm' },
-      { label: 'Berat', value: '5 kg / 6,6 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '20 x 20 ' },
+      { label: 'Berat', value: '5  / 6,6 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (5 kg)
-          ['pedestrian', 'car']   // Untuk 8 cm (6.6 kg)
+          ['pedestrian', 'car'],  // Untuk 6  (5 )
+          ['pedestrian', 'car']   // Untuk 8  (6.6 )
         ]
       },
-      { label: 'Pemakaian', value: '24,5 bh/m²' },
+      { label: 'Pemakaian', value: '24,5 ' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -145,11 +145,11 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '20 x 30 cm' },
-      { label: 'Berat', value: '10,5 kg' },
-      { label: 'Tebal', value: '8 cm' },
+      { label: 'Dimensi', value: '20 x 30 ' },
+      { label: 'Berat', value: '10,5 ' },
+      { label: 'Tebal', value: '8 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '16 bh/m²' },
+      { label: 'Pemakaian', value: '16 ' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -176,16 +176,16 @@ export const classicSetSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: 'Ø 23,9 cm' },
-      { label: 'Berat', value: '4 kg' },
-      { label: 'Tebal', value: '8 cm' },
+      { label: 'Dimensi', value: 'Ø 23,9 ' },
+      { label: 'Berat', value: '4 ' },
+      { label: 'Tebal', value: '8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
           ['pedestrian', 'car']  // ↑↩ interpreted as pedestrian and car
         ]
       },
-      { label: 'Pemakaian', value: '45 bh/m²' }
+      { label: 'Pemakaian', value: '45 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -207,9 +207,9 @@ export const classicSetSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '11 (6) x 12 cm' },
-      { label: 'Berat', value: '1,3 kg / 1,8 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '11 (6) x 12 ' },
+      { label: 'Berat', value: '1,3  / 1,8 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
@@ -217,7 +217,7 @@ export const classicSetSubItems = [
           ['car', 'lorry']   
         ]
       },
-      { label: 'Pemakaian', value: '92 bh/m²' }
+      { label: 'Pemakaian', value: '92 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -239,9 +239,9 @@ export const classicSetSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '11 (9) x 12 cm' },
-      { label: 'Berat', value: '1,6 kg / 2,1 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '11 (9) x 12 ' },
+      { label: 'Berat', value: '1,6  / 2,1 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
@@ -249,7 +249,7 @@ export const classicSetSubItems = [
           ['car', 'lorry']   
         ]
       },
-      { label: 'Pemakaian', value: '79 bh/m²' }
+      { label: 'Pemakaian', value: '79 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -271,9 +271,9 @@ export const classicSetSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '12 x 12 cm' },
-      { label: 'Berat', value: '1,8 kg / 2,4 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '12 x 12 ' },
+      { label: 'Berat', value: '1,8  / 2,4 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
@@ -281,7 +281,7 @@ export const classicSetSubItems = [
           ['car', 'lorry']   
         ]
       },
-      { label: 'Pemakaian', value: '69 bh/m²' }
+      { label: 'Pemakaian', value: '69 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -306,16 +306,16 @@ export const altstadtSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: 'Ø 16,5 cm' },
-      { label: 'Berat', value: '2 kg' },
-      { label: 'Tebal', value: '8 cm' },
+      { label: 'Dimensi', value: 'Ø 16,5 ' },
+      { label: 'Berat', value: '2 ' },
+      { label: 'Tebal', value: '8 ' },
       { 
         label: 'Aplikasi', 
         icons: [
           ['car', 'lorry']
         ]
       },
-      { label: 'Pemakaian', value: '83 bh/m²' }
+      { label: 'Pemakaian', value: '83 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -337,16 +337,16 @@ export const altstadtSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '13,5 (6,5) x 10,4 cm' },
-      { label: 'Berat', value: '1,8 kg' },
-      { label: 'Tebal', value: '8 cm' },
+      { label: 'Dimensi', value: '13,5 (6,5) x 10,4 ' },
+      { label: 'Berat', value: '1,8 ' },
+      { label: 'Tebal', value: '8 ' },
             { 
         label: 'Aplikasi', 
         icons: [
           ['car', 'lorry']
         ]
       },
-      { label: 'Pemakaian', value: '95 bh/m²' }
+      { label: 'Pemakaian', value: '95 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -368,16 +368,16 @@ export const altstadtSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '13,5 (8,7) x 14 cm' },
-      { label: 'Berat', value: '2,7 kg' },
-      { label: 'Tebal', value: '8 cm' },
+      { label: 'Dimensi', value: '13,5 (8,7) x 14 ' },
+      { label: 'Berat', value: '2,7 ' },
+      { label: 'Tebal', value: '8 ' },
             { 
         label: 'Aplikasi', 
         icons: [
           ['car', 'lorry']
         ]
       },
-      { label: 'Pemakaian', value: '65 bh/m²' }
+      { label: 'Pemakaian', value: '65 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1300 N' },
@@ -399,9 +399,9 @@ export const altstadtSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '14 x 7 cm' },
-      { label: 'Berat', value: '1,2 kg / 1,5 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '14 x 7 ' },
+      { label: 'Berat', value: '1,2  / 1,5 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
             { 
         label: 'Aplikasi', 
         icons: [
@@ -409,7 +409,7 @@ export const altstadtSubItems = [
           ['car', 'lorry']
         ]
       },
-      { label: 'Pemakaian', value: '101 bh/m²' }
+      { label: 'Pemakaian', value: '101 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1150 N' },
@@ -431,9 +431,9 @@ export const altstadtSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '14 x 14 cm' },
-      { label: 'Berat', value: '2,5 kg / 3,3 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '14 x 14 ' },
+      { label: 'Berat', value: '2,5  / 3,3 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
                   { 
         label: 'Aplikasi', 
         icons: [
@@ -441,7 +441,7 @@ export const altstadtSubItems = [
           ['car', 'lorry']
         ]
       },
-      { label: 'Pemakaian', value: '50 bh/m²' }
+      { label: 'Pemakaian', value: '50 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100 N' },
@@ -463,9 +463,9 @@ export const altstadtSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '21 x 7 cm' },
-      { label: 'Berat', value: '1,8 kg / 2,4 kg' },
-      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { label: 'Dimensi', value: '21 x 7 ' },
+      { label: 'Berat', value: '1,8  / 2,4 ' },
+      { label: 'Tebal', value: '6  / 8 ' },
                   { 
         label: 'Aplikasi', 
         icons: [
@@ -473,7 +473,7 @@ export const altstadtSubItems = [
           ['car', 'lorry']
         ]
       },
-      { label: 'Pemakaian', value: '67 bh/m²' }
+      { label: 'Pemakaian', value: '67 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100 N' },
@@ -495,16 +495,16 @@ export const altstadtSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '21 x 14 cm' },
-      { label: 'Berat', value: '5,1 kg' },
-      { label: 'Tebal', value: '8 cm' },
+      { label: 'Dimensi', value: '21 x 14 ' },
+      { label: 'Berat', value: '5,1 ' },
+      { label: 'Tebal', value: '8 ' },
                   { 
         label: 'Aplikasi', 
         icons: [
           ['car', 'lorry']
         ]
       },
-      { label: 'Pemakaian', value: '33 bh/m²' }
+      { label: 'Pemakaian', value: '33 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100 N' },
@@ -529,9 +529,9 @@ export const othersSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: 's=11 cm' },
-    { label: 'Berat', value: '4,3 kg / 5,8 kg' },
-    { label: 'Tebal', value: '6 cm /  8 cm' },
+    { label: 'Dimensi', value: 's=11 ' },
+    { label: 'Berat', value: '4,3  / 5,8 ' },
+    { label: 'Tebal', value: '6  /  8 ' },
     { 
       label: 'Aplikasi',
       icons: [
@@ -539,7 +539,7 @@ export const othersSubItems   = [
         ['car', 'lorry']
       ]
     },
-    { label: 'Pemakaian', value: '29 bh/m²' },
+    { label: 'Pemakaian', value: '29 ' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -563,9 +563,9 @@ export const othersSubItems   = [
   ],
   specifications: [
     { label: 'Produk', value: 'Halfpave' },
-    { label: 'Dimensi', value: '20,6 x 10,2 cm ' },
-    { label: 'Berat', value: '2,5 kg / 3,6 kg' },
-    { label: 'Tebal', value: '6 cm / 8 cm' },
+    { label: 'Dimensi', value: '20,6 x 10,2  ' },
+    { label: 'Berat', value: '2,5  / 3,6 ' },
+    { label: 'Tebal', value: '6  / 8 ' },
         { 
       label: 'Aplikasi',
       icons: [
@@ -573,7 +573,7 @@ export const othersSubItems   = [
         ['car', 'lorry']
       ]
     },
-    { label: 'Pemakaian', value: '48 bh/m²' }
+    { label: 'Pemakaian', value: '48 ' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -595,9 +595,9 @@ export const othersSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Ukuran', value: '13,5 x 20 cm' },
-    { label: 'Berat', value: '2,6 kg / 3,3 kg' },
-        { label: 'Tebal', value: '6 cm / 8 cm' },
+    { label: 'Ukuran', value: '13,5 x 20 ' },
+    { label: 'Berat', value: '2,6  / 3,3 ' },
+        { label: 'Tebal', value: '6  / 8 ' },
                 { 
       label: 'Aplikasi',
       icons: [
@@ -605,7 +605,7 @@ export const othersSubItems   = [
         ['car', 'lorry']
       ]
     },
-    { label: 'Pemakaian', value: '48 bh/m²' }
+    { label: 'Pemakaian', value: '48 ' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1300 N' },
@@ -630,16 +630,16 @@ export const gudingPaveSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: '30 x 30 cm' },
-    { label: 'Berat', value: '12 kg' },
-    { label: 'Tebal', value: '6 cm' },
+    { label: 'Dimensi', value: '30 x 30 ' },
+    { label: 'Berat', value: '12 ' },
+    { label: 'Tebal', value: '6 ' },
     { 
       label: 'Aplikasi',
       icons: [
         ['pedestrian', 'car']
       ]
     },
-    { label: 'Pemakaian', value: '11 bh/m²' },
+    { label: 'Pemakaian', value: '11 ' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -662,16 +662,16 @@ export const gudingPaveSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: '30 x 30 cm' },
-    { label: 'Berat', value: '12 kg' },
-    { label: 'Tebal', value: '6 cm' },
+    { label: 'Dimensi', value: '30 x 30 ' },
+    { label: 'Berat', value: '12 ' },
+    { label: 'Tebal', value: '6 ' },
     { 
       label: 'Aplikasi',
       icons: [
               ['pedestrian', 'car']
       ]
     },
-    { label: 'Pemakaian', value: '11 bh/m²' },
+    { label: 'Pemakaian', value: '11 ' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -698,16 +698,16 @@ export const grassBlockSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: '45 x 30 cm' },
-    { label: 'Berat', value: '14,5 kg' },
-    { label: 'Tebal', value: '6 cm' },
+    { label: 'Dimensi', value: '45 x 30 ' },
+    { label: 'Berat', value: '14,5 ' },
+    { label: 'Tebal', value: '6 ' },
     { 
       label: 'Aplikasi',
       icons: [
         ['pedestrian', 'garage']      
       ]
     },
-    { label: 'Pemakaian', value: '7,5 bh/m²' },
+    { label: 'Pemakaian', value: '7,5 ' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -730,16 +730,16 @@ export const grassBlockSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: '40 x 40 cm' },
-    { label: 'Berat', value: '17,5 kg' },
-    { label: 'Tebal', value: '8 cm' },
+    { label: 'Dimensi', value: '40 x 40 ' },
+    { label: 'Berat', value: '17,5 ' },
+    { label: 'Tebal', value: '8 ' },
         { 
       label: 'Aplikasi',
       icons: [
         ['pedestrian', 'garage']      
       ]
     },
-    { label: 'Pemakaian', value: '6,25 bh/m²' }
+    { label: 'Pemakaian', value: '6,25 ' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -761,16 +761,16 @@ export const grassBlockSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Ukuran', value: '30 x 30 cm' },
-    { label: 'Berat', value: '13,5 kg' },
-    { label: 'Tebal', value: '10 cm' },
+    { label: 'Ukuran', value: '30 x 30 ' },
+    { label: 'Berat', value: '13,5 ' },
+    { label: 'Tebal', value: '10 ' },
         { 
       label: 'Aplikasi',
       icons: [
         ['pedestrian', 'garage']      
       ]
     },
-    { label: 'Pemakaian', value: '11 bh/m²' }
+    { label: 'Pemakaian', value: '11 ' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1300 N' },
@@ -795,16 +795,16 @@ export const guidingTilesSubItems  = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '30 x 30 cm' },
-      { label: 'Berat', value: '6,2 kg' },
-      { label: 'Tebal', value: '3 cm' },
+      { label: 'Dimensi', value: '30 x 30 ' },
+      { label: 'Berat', value: '6,2 ' },
+      { label: 'Tebal', value: '3 ' },
        { 
       label: 'Aplikasi', 
       icons: [
         ['pedestrian']       
       ]
     },
-      { label: 'Pemakaian', value: '11 bh/m²' },
+      { label: 'Pemakaian', value: '11 ' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -827,16 +827,16 @@ export const guidingTilesSubItems  = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '30 x 30 cm' },
-      { label: 'Berat', value: '6,2 kg' },
-      { label: 'Tebal', value: '3 cm' },
+      { label: 'Dimensi', value: '30 x 30 ' },
+      { label: 'Berat', value: '6,2 ' },
+      { label: 'Tebal', value: '3 ' },
        { 
       label: 'Aplikasi', 
       icons: [
         ['pedestrian']       
       ]
     },
-      { label: 'Pemakaian', value: '11 bh/m²' },
+      { label: 'Pemakaian', value: '11 ' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -863,11 +863,11 @@ export const productsPbContent = {
     ],
     specifications: [
       { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5 ' },
+      { label: 'Tebal', value: '6 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m²' },
+      { label: 'Pemakaian', value: '49 ' },
       { label: 'Best Seller', icon: '/icons/BS.png' }
     ],
     technicalSpecs: [
@@ -896,11 +896,11 @@ export const productsPbContent = {
     ],
     specifications: [
       { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5 ' },
+      { label: 'Tebal', value: '6 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m²' }
+      { label: 'Pemakaian', value: '49 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -928,11 +928,11 @@ export const productsPbContent = {
     ],
     specifications: [
       { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5 ' },
+      { label: 'Tebal', value: '6 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m²' }
+      { label: 'Pemakaian', value: '49 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -960,11 +960,11 @@ export const productsPbContent = {
     ],
     specifications: [
       { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5 ' },
+      { label: 'Tebal', value: '6 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m²' }
+      { label: 'Pemakaian', value: '49 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -992,11 +992,11 @@ export const productsPbContent = {
     ],
     specifications: [
       { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5 ' },
+      { label: 'Tebal', value: '6 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m²' }
+      { label: 'Pemakaian', value: '49 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -1024,11 +1024,11 @@ export const productsPbContent = {
     ],
     specifications: [
       { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5 ' },
+      { label: 'Tebal', value: '6 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m²' }
+      { label: 'Pemakaian', value: '49 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -1055,11 +1055,11 @@ export const productsPbContent = {
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Dimensi', value: '10 x 20 ' },
+      { label: 'Berat', value: '2,5 ' },
+      { label: 'Tebal', value: '6 ' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m²' }
+      { label: 'Pemakaian', value: '49 ' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },

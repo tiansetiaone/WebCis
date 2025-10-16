@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
+import '@/app/style/Inovasi.css';
+
 const inovasiList = [
   {
     id: 1,
@@ -36,6 +38,7 @@ export default function Detailsb() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const modalRef = useRef(null);
+  const [open, setOpen] = useState(false)
 
    // Handle click outside modal
   useEffect(() => {
@@ -113,9 +116,9 @@ export default function Detailsb() {
 
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/inovasi.jpg"
           alt="Banner Inovasi"
@@ -133,35 +136,78 @@ export default function Detailsb() {
         />
       </div>
 
-      {/* Header Section */}
-<div className="bg-[#F2F2F2] py-4">
-  <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-    <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
-    <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-    {/* <Link href="/perusahaan/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link> */}
-    {/* <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link> */}
-    {/* <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link> */}
-    <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold">Inovasi</Link>
-    <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
-  </nav>
-</div>
+          {/* Header Section */}
+      <div className="bg-[#F2F2F2] py-4">
+      {/* Desktop Navbar */}
+      <nav className="hidden sm:flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <Link href="/perusahaan/tentang" className="text-[#2D5DA6] font-bold hover:underline">
+          Tentang Kami
+        </Link>
+        <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+          Sejarah
+        </Link>
+        <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">
+          Inovasi
+        </Link>
+        <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+          Karir
+        </Link>
+      </nav>
 
-    <section className="max-w-5xl mx-auto mt-10 px-4 sm:px-6 text-sm sm:text-base mb-16">
+      {/* Mobile Navbar */}
+      <div className="sm:hidden flex flex-col text-[1rem] font-light tracking-wide">
+        {/* Judul utama menu */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex justify-between items-center px-4 py-3 bg-[#F2F2F2] text-[#2D5DA6] font-bold hover:underline border-b"
+        >
+          <span>Inovasi</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`w-6 h-6 transform transition-transform ${
+              open ? "rotate-180 text-[#2D5DA6]" : "rotate-0 text-[#2D5DA6]"
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {/* Dropdown list */}
+        {open && (
+          <div className="flex flex-col bg-[#F2F2F2] px-6 py-2 space-y-2">
+            <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
+              Tentang Kami
+            </Link>
+            <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+              Sejarah
+            </Link>
+            <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+              Karir
+            </Link>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
   {/* Judul */}
-      <h1 className="justify-center text-black font-semibold text-lg sm:text-lg uppercase mb-2">
+      <h1 className="justify-center text-black font-semibold text-lg sm:text-lg 2xl:text-2xl uppercase mb-2">
         {data.judul}
       </h1>
 
 
   {/* Tanggal */}
-  <p className="text-blue-600 text-sm mb-6">
+  <p className="text-blue-600 text-sm 2xl:text-base mb-6">
     {data?.tanggal || 'DD Month Years'}
   </p>
 
   {/* Gambar */}
-  <div className="w-full max-w-3xl h-[240px] sm:h-[320px] mx-auto bg-gray-200 flex items-center justify-center mb-8">
+  <div className="h-[240px] w-full xl:px-40 xl:h-[320px] 2xl:h-[450px] mx-auto flex items-center justify-center mb-8">
     {data?.gambar ? (
-      <img src={data.gambar} alt={data.judul} className="w-full h-full object-cover" />
+      <img src={data.gambar} alt={data.judul} className="thumb-inovasi w-full h-full object-cover" />
     ) : (
       <svg className="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
         <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm10 2a1 1 0 110 2 1 1 0 010-2zm-4 3a3 3 0 11-6 0 3 3 0 016 0zm-3 4a5 5 0 00-5 5h10a5 5 0 00-5-5z" />
@@ -170,7 +216,7 @@ export default function Detailsb() {
   </div>
 
   {/* Konten Deskripsi */}
-  <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b">
+  <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b 2xl:text-base">
     {data?.deskripsi ? (
       <p>{data.deskripsi}</p>
     ) : (
@@ -262,7 +308,7 @@ export default function Detailsb() {
 
   {/* Tombol Kembali */}
   <div className="mt-10">
-    <a href="/perusahaan/inovasi" className="text-sm text-blue-800 font-medium hover:underline">
+    <a href="/perusahaan/inovasi" className="text-sm 2xl:text-base text-blue-800 font-medium hover:underline">
       &lt;&lt; Kembali ke Halaman Inovasi
     </a>
   </div>

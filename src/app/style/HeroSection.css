@@ -1,13 +1,52 @@
-/* Mobile Styles (375px - 640px) */
+.hero-section {
+  position: relative;
+  width: 100%;
+}
+
+.parent-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Desktop Styles - default */
+.parent-container {
+  height: 823px;
+  margin-top: 5.8rem;
+  margin-bottom: -14rem;
+}
+
+/* Mobile Styles - override desktop styles */
+@media (max-width: 640px) {
+  .parent-container {
+    height: 400px;
+    margin-top: 3rem;
+    margin-bottom: -4rem;
+  }
+  
+  .hero-navigation {
+    display: none !important;
+  }
+}
+
+
+
+/* Mobile Styles (430px - 640px) */
 @media only screen and (max-width: 640px) {
   .hero-slider-container {
     height: 400px !important;
     margin-top: 3rem !important;
     margin-bottom: -4rem !important;
   }
+.parent-container {
+    height: 85vh;             /* Sedikit lebih kecil di mobile */
+    max-height: 600px;
+    min-height: 450px;
+    margin-top: 3rem;
+  }
 
   .hero-navigation {
-    display: none !important; /* Hide arrows on mobile */
+    display: none !important;
   }
 
   .hero-slide-indicators {
@@ -25,4 +64,27 @@
   .parent-container {
     height: 37rem;
   }
+}
+
+
+/* Mobile Styles (430px) */
+@media (max-width: 430px) {
+.parent-container {
+  position: relative;
+  width: 100%;              /* Gunakan tinggi viewport agar proporsional */     
+  min-height: 500px;          /* Tinggi minimum agar tidak terlalu kecil */
+  margin-top: 5.2rem;           /* Spasi atas yang stabil */
+  margin-bottom: 0;           /* Hindari margin-bottom negatif */
+  overflow: hidden;
+}
+  
+  .hero-slide-indicators {
+    bottom: 1rem !important;
+  }
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
 }

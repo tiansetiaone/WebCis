@@ -236,7 +236,7 @@ export const productsUtContent = {
     }))
   },
   'Utility Variant': {
-    name: 'CONCRETE PIPE',
+    name: 'LOW PRESSURE',
     category: 'Utility',
     thumbnails: [
       {

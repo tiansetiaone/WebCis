@@ -1,22 +1,27 @@
 module.exports = {
-    eslint: {
-      ignoreDuringBuilds: true,
-    },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   i18n: {
     locales: ['en', 'id'],
     defaultLocale: 'id',
   },
-  };
-  
+};
 
-  /** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    images: {
-        unoptimized: false, // Nonaktifkan optimisasi gambar
-        domains: ['img.youtube.com'],
+  reactStrictMode: true,
+  images: {
+    unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        // pathname: '/vi/**', // Uncomment jika ingin membatasi path tertentu
       },
-  };
-  
-  module.exports = nextConfig;
-  
+      // Tambahkan pola remote lainnya jika diperlukan
+    ],
+  },
+};
+
+module.exports = nextConfig;

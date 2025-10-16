@@ -120,7 +120,7 @@ const LocationMap = () => {
   }, []);
 
   return (
-    <div className="relative z-0">
+    <div className="relative z-0 2xl:mb-24">
       <div 
         id="map-container" 
         className="rounded-lg shadow-md border border-gray-200 overflow-hidden"

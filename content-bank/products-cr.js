@@ -84,8 +84,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/New Royal/new royal 1.png',
-        largeImage: '/images/Concrete Roof/New Royal/new royal 1.png',
+        thumbImage: '/images/Concrete Roof/New Royal/newroyal-sw.png',
+        largeImage: '/images/Concrete Roof/New Royal/newroyal-sw.png',
         color: 'Hitam Solid'
       }
     ],
@@ -127,8 +127,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Oriental/oriental 1.png',
-        largeImage: '/images/Concrete Roof/Oriental/oriental 1.png',
+        thumbImage: '/images/Concrete Roof/Oriental/oriental-sw.png',
+        largeImage: '/images/Concrete Roof/Oriental/oriental-sw.png',
         color: 'Hitam Solid'
       }
     ],
@@ -171,8 +171,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Majestic/majestic 1.png',
-        largeImage: '/images/Concrete Roof/Majestic/majestic 1.png',
+        thumbImage: '/images/Concrete Roof/Majestic/Majestic-black.png',
+        largeImage: '/images/Concrete Roof/Majestic/Majestic-black.png',
         color: 'Hitam Solid'
       }
     ],

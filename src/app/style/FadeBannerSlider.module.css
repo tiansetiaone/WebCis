@@ -19,81 +19,67 @@
 .bannerImage {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
-.overlay {
+.locationOverlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.25rem;
+  z-index: 10;
 }
 
-.brandLogo {
-  font-size: 1.2rem;
+.locationText {
+  font-size: 0.8rem;
   font-weight: 500;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-}
-
-.tagline {
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.8;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-}
-
-.subtitle {
-  font-size: 1rem;
-  max-width: 80%;
+  margin: 0;
 }
 
 /* Mobile Styles */
 @media (max-width: 640px) {
-  .overlay {
-    padding: 1.5rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+ .imageContainer {
+    height: 400px;
   }
-
-  .brandLogo {
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
+  
+  .bannerImage {
+    object-fit: cover;
   }
-
-  .tagline {
+  
+  .locationOverlay {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .locationText {
     font-size: 0.7rem;
-    margin-bottom: 1rem;
   }
+}
 
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .subtitle {
-    font-size: 0.8rem;
-    max-width: 100%;
-  }
+/* Specific mobile breakpoint */
+@media (max-width: 430px) {
   .imageContainer {
-        position: relative;
-        width: 78rem;
-        margin-top: 2rem;
-        margin-left: -2rem;
+    height: 582px;
+  }
+  
+  .bannerImage {
+    height: 582px;
+    object-position: center;
+  }
+  
+  .locationOverlay {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.1rem 0.3rem;
+  }
+  
+  .locationText {
+    font-size: 0.6rem;
   }
 }
 
-@media (min-width: 1536px) and (max-width: 2000px) { 
-.imageContainer {
-  width: 100%;
-  height: 100%;
-}
-}
+/* Remove unused styles */

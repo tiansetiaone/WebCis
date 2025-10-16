@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
-import { FaCalculator } from 'react-icons/fa';
+import { FaCalculator, FaPhone } from 'react-icons/fa';
 import { 
   productsPbContent, 
   pavingBlockSubItems, 
@@ -16,6 +16,8 @@ import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
 import ApplicationModal from '../../components/ApplicationModal';
 import BannerProduk from '../../components/BannerProduk';
+import Link from 'next/link';
+
 
 export default function DetailsPb() {
   const router = useRouter();
@@ -163,7 +165,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
         {currentProduct.category.toUpperCase()}
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar />
         
         <main className="w-full lg:w-5/6 flex flex-col">
@@ -171,25 +173,42 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
           <div className="relative gap-8 mb-22">
             {/* Product Specifications */}
             <div className="w-auto lg:w-1/2 space-y-6 px-6">
-              <section className='mb-5 mt-5'>
- <div className="w-fit bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 mb-4">
-  {currentProduct.name}
-</div>    
+              <section className='mb-5'>
+<div className="flex items-center gap-2 h-20"> {/* memastikan alignment vertikal */}
+  {/* Container Teks */}
+  <div className="flex items-center justify-center min-w-max bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 h-[40px] 2xl:text-2xl">
+    {currentProduct.name}
+  </div>
+
+  {/* Container Ikon */}
+{/* {(currentProduct.name === 'ALTSTADT' || currentProduct.name === 'CLASSIC SET') && (
+                    <div className="flex items-center h-[40px]">
+                      <Image
+                        src="/icons/app verif.png"
+                        alt="application verified"
+                        width={100}
+                        height={40}
+                        className="object-contain"
+                      />
+                    </div>
+                  )} */}
+</div>
+
   
-          <div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
+          <div className="w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
             <table className="w-full border-collapse">
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
-  <tr className="bg-[#0B203F] text-white">
-    <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
+  <tr className="bg-[#0B203F] text-white text-sm 2xl:text-base">
+    <th className="border border-gray-300 px-4 py-2 text-center w-80 2xl:w-90">Gambar</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-40">Produk</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-30">Berat</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-30">Tebal</th>
-    <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-50">Dimensi (cm)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-40 2xl:w-40">Berat (Kg)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-50 2xl:w-40">Tebal (cm)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian (bh/m²)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-40 2xl:w-50">Aplikasi</th>
   </tr>
 </thead>
-<tbody className='text-sm'>
+<tbody className='text-sm  2xl:text-base'>
 {activeItems.map((product) => {
     const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value || '-';
     const weights = product.specifications.find(spec => spec.label === 'Berat')?.value.split('/').map(w => w.trim()) || ['-'];
@@ -205,7 +224,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
             {i === 0 ? (
               <>
                 <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2">
-                  <div className="relative w-40 h-40 mx-auto">
+                  <div className="relative w-40 h-40 2xl:w-50 2xl:h-60 mx-auto">
                     <Image
                       src={product.thumbnails[0].thumbImage}
                       alt={product.name}
@@ -242,7 +261,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
             ) : null}
 <td className="border border-gray-300 px-4 py-2 text-center relative">
   {application ? (
-    <div className="flex gap-1 justify-center">
+    <div className="flex gap-1 2xl:gap-3 justify-center">
       {Array.isArray(application.icons?.[0]) 
         ? application.icons[i]?.map((icon, iconIndex) => (
             <div 
@@ -259,19 +278,19 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
               onMouseLeave={() => setHoveredIcon(null)}
             >
               {icon === 'pedestrian' ? (
-                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4 2xl:w-4 2xl:h-6" />
               ) : icon === 'car' ? (
-                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4 2xl:w-7 2xl:h-7" />
               ) : icon === 'garage' ? (
-                <img src="/icons/garage.png" alt="garage" className="w-4 h-4" />
+                <img src="/icons/garage.png" alt="garage" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ): icon === 'lorry' ? (
-                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
+                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'fuso' ? (
-                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
+                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'factory' ? (
-                <img src="/icons/factory.png" alt="factory" className="w-4 h-4" />
+                <img src="/icons/factory.png" alt="factory" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'harbor' ? (
-                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
+                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : null}
               
               {hoveredIcon === icon && (
@@ -303,9 +322,9 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
               onMouseLeave={() => setHoveredIcon(null)}
             >
               {icon === 'pedestrian' ? (
-                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4 2xl:w-4 2xl:h-6" />
               ) : icon === 'car' ? (
-                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : null}
               
               {hoveredIcon === icon && (
@@ -352,14 +371,28 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
                   ))}
                 </div>
               </section> */}
-<div className='pl-1'>
+<div className='pl-1 flex gap-5'>
   <a
-    href="/informasi/katalog"
+    href="/informasi/katalog#brosur-section"
     className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
   >
     <FaCalculator className="text-lg" />
     Unduh Brosur
   </a>
+{(currentProduct.name === 'ALTSTADT' || currentProduct.name === 'CLASSIC SET') && (
+  <Link 
+    href="/kontak#kontak-state"
+    scroll={false} // Nonaktifkan scroll otomatis Next.js
+    className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
+    onClick={(e) => {
+      // Simpan state bahwa kita ingin scroll ke section
+      sessionStorage.setItem('shouldScrollToKontak', 'true');
+    }}
+  >
+    <FaPhone className="text-lg" />
+    Jasa Pemasangan
+  </Link>
+)}
 </div>
             </div>
           </div>

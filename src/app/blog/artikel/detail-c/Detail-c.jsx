@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { FaPlay, FaTimes } from 'react-icons/fa';
+import '@/app/style/Blog.css';
 
 // Video Data
 const mainArticleVideo = {
@@ -86,9 +87,9 @@ export default function DetailC() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/artikel-4.jpg"
           alt="Banner Artikel"
@@ -108,22 +109,22 @@ export default function DetailC() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <nav className="2xl:text-lg flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
           <Link href="/blog/artikel" className="text-[#2D5DA6] font-bold">Artikel</Link>
           <Link href="/blog/testimoni" className="text-[#333] hover:text-[#2D5DA6]">Testimoni</Link>
         </nav>
       </div>
 
-      <section className="max-w-5xl mx-auto mt-10 px-4 sm:px-6 text-sm sm:text-base mb-16">
-        {/* Judul */}
-        <h1 className="justify-center text-black font-semibold text-lg sm:text-lg uppercase mb-2">
-          {data.judul}
-        </h1>
+ <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
+  {/* Judul */}
+      <h1 className="justify-center text-black font-semibold text-lg sm:text-lg 2xl:text-2xl uppercase mb-2">
+        {data.judul}
+      </h1>
 
-        {/* Tanggal */}
-        <p className="text-blue-600 text-sm mb-6">
-          {data?.tanggal || 'DD Month Years'}
-        </p>
+  {/* Tanggal */}
+  <p className="text-blue-600 text-sm 2xl:text-base mb-6">
+    {data?.tanggal || 'DD Month Years'}
+  </p>
 
         {/* Video Thumbnail Section */}
         <div className="w-full max-w-2xl mx-auto mb-8 rounded-2xl">
@@ -142,18 +143,18 @@ export default function DetailC() {
                 src={data.videoThumbnail}
                 alt={data.judul}
                 fill
-                className="object-contain transition-transform duration-500 hover:scale-110 rounded-2xl"
+                className="thumb-blog object-contain transition-transform duration-500 hover:scale-110 rounded-2xl"
               />
             </div>
           </div>
         </div>
 
-        {/* Konten Deskripsi */}
-        <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b mb-5">
-          {data?.deskripsi ? (
-            <p>{data.deskripsi}</p>
-          ) : (
-            <>
+       {/* Konten Deskripsi */}
+  <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b mb-5 2xl:text-base">
+    {data?.deskripsi ? (
+      <p>{data.deskripsi}</p>
+    ) : (
+      <>
               <p>
                 Pada hari Jumat 11 Juli 2025, Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk melihat proses pembuatan produk Cisangkan.
               </p>

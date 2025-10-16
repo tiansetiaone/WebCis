@@ -3,11 +3,14 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import '@/app/style/Karir.css';
 
 export default function Karir() {
   // State untuk pagination
   const [currentPage, setCurrentPage] = useState(1);
   const modalRef = useRef(null);
+  const [open, setOpen] = useState(false);
+
 
   // Data katalog
   const karirList = [
@@ -94,9 +97,9 @@ export default function Karir() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-25">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/karir.jpg"
           alt="Banner Karir"
@@ -114,69 +117,121 @@ export default function Karir() {
         />
       </div>
 
-      {/* Header Section */}
+           {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-          <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
-          <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-          <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">Inovasi</Link>
-          <Link href="/perusahaan/karir" className="text-[#2D5DA6] font-bold">Karir</Link>
-        </nav>
+      {/* Desktop Navbar */}
+      <nav className="hidden sm:flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
+          Tentang Kami
+        </Link>
+        <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+          Sejarah
+        </Link>
+        <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">
+          Inovasi
+        </Link>
+        <Link href="/perusahaan/karir" className="text-[#2D5DA6] font-bold hover:underline">
+          Karir
+        </Link>
+      </nav>
+
+      {/* Mobile Navbar */}
+      <div className="sm:hidden flex flex-col text-[1rem] font-light tracking-wide">
+        {/* Judul utama menu */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex justify-between items-center px-4 py-3 bg-[#F2F2F2] text-[#2D5DA6] font-bold hover:underline border-b"
+        >
+          <span>Karir</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`w-6 h-6 transform transition-transform ${
+              open ? "rotate-180 text-[#2D5DA6]" : "rotate-0 text-[#2D5DA6]"
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {/* Dropdown list */}
+        {open && (
+          <div className="flex flex-col bg-[#F2F2F2] px-6 py-2 space-y-2">
+            <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
+              Tentang Kami
+            </Link>
+            <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+              Sejarah
+            </Link>
+            <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">
+              Inovasi
+            </Link>
+          </div>
+        )}
       </div>
+    </div>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
         {/* Heading */}
         <div className="gap-6 items-start mb-5">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5 2xl:text-2xl">
             KARIR
           </h2>
         </div>
 
-        {/* Daftar Karir dengan efek fade in */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col gap-6 mb-20"
+{/* Daftar Karir dengan efek fade in */}
+<AnimatePresence mode="wait">
+  <motion.div
+    key={currentPage}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
+    className="flex flex-col gap-6 mb-20"
+  >
+    {currentItems.map((item) => (
+      <div
+        key={item.id}
+        className="border border-gray-200 shadow-sm p-6 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-0"
+      >
+        {/* Bagian info karir */}
+        <div className="flex-1">
+          <h3 className="font-semibold uppercase mb-4 text-base sm:text-sm xl:text-sm 2xl:text-lg">
+            {item.nama}
+          </h3>
+          <div className="space-y-2 text-sm sm:text-xs xl:text-sm 2xl:text-base">
+            <div className="flex flex-col sm:flex-row">
+              <span className="w-40 text-gray-600">Penempatan</span>
+              <span className="sm:ml-2">: {item.penempatan}</span>
+            </div>
+            <div className="flex flex-col sm:flex-row">
+              <span className="w-40 text-gray-600">Bidang Pekerjaan</span>
+              <span className="sm:ml-2">: {item.bidang}</span>
+            </div>
+            <div className="flex flex-col sm:flex-row">
+              <span className="w-40 text-gray-600">Kebutuhan</span>
+              <span className="sm:ml-2">: {item.kebutuhan}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Tombol action */}
+        <div className="flex sm:block">
+          <Link
+            href={item.url}
+            className="bg-[#0B203F] hover:bg-[#14325f] text-white px-4 py-2 rounded text-sm sm:text-xs xl:text-sm 2xl:text-base text-center w-full sm:w-auto"
           >
-            {currentItems.map((item) => (
-              <div 
-                key={item.id} 
-                className="border border-gray-200 shadow-sm p-6 flex justify-between items-start"
-              >
-                <div>
-                  <h3 className="font-semibold uppercase mb-4">{item.nama}</h3>
-                  <div className="space-y-1 text-sm">
-                    <div className="flex">
-                      <span className="w-40">Penempatan</span>
-                      <span>: {item.penempatan}</span>
-                    </div>
-                    <div className="flex">
-                      <span className="w-40">Bidang Pekerjaan</span>
-                      <span>: {item.bidang}</span>
-                    </div>
-                    <div className="flex">
-                      <span className="w-40">Kebutuhan</span>
-                      <span>: {item.kebutuhan}</span>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <Link
-                    href={item.url}
-                    className="bg-[#0B203F] hover:bg-[#14325f] text-white px-4 py-2 text-sm rounded inline-block"
-                  >
-                    Selengkapnya
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+            Selengkapnya
+          </Link>
+        </div>
+      </div>
+    ))}
+  </motion.div>
+</AnimatePresence>
+
 
         {/* Pagination - hanya muncul jika item lebih dari itemsPerPage */}
         {totalItems > itemsPerPage && (

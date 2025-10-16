@@ -10,27 +10,38 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/app/style/Beranda.css';
 
+
 // Hero Slides Data with URLs
 const heroSlides = [
   {
     image: '/images/banners/Banner Bitumen.jpg',
+    mobileImage: '/images/mobile/maxxi.jpg', // Tambahkan ini
     url: '/informasi/katalog',
+    location: ''
   },
   {
     image: '/images/4.jpg',
+    mobileImage: '/images/mobile/50-hut.jpg', // Tambahkan ini
     url: '/blog/artikel/detail-b',
+    location: ''
   },
-  {
+    {
     image: '/images/Banner-TO.jpg',
+    mobileImage: '/images/mobile/TO-mb.jpg', // Tambahkan ini
     url: '/blog/artikel/detail-e',
+    location: ''
   },
   {
     image: '/images/1.jpg',
+    mobileImage: '/images/mobile/banner-mb1.png', // Tambahkan ini
     url: '/produk?category=Concrete Roof',
+    location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
+    mobileImage: '/images/mobile/banner-mb3.png', // Tambahkan ini
     url: '/produk?category=Paving Block',
+    location: 'Tag location'
   },
 ];
 
@@ -39,7 +50,7 @@ const heroSlides = [
 const defaultCategories = [
   { 
     name: 'Concrete Roof', 
-    icon: '/icons/cr-trace.png',
+    icon: '/icons/cr-traces.png',
     link: '/produk?category=Concrete Roof' // Tambahkan properti link
   },
   { name: 'Paving Block', icon: '/icons/pv-trace.png',  link: '/produk/produk-pv?category=Paving Block' },
@@ -69,14 +80,14 @@ const proyekData = [
     namaProduk: 'Concrete Tile Sandstein, Tactile',
     namaProyek: 'Gedung Sate',
     tempatProyek: 'Bandung',
-    gambar: '/images/proyek/Paving Block/Gedung Sate.jpg'
+    gambar: '/images/proyek/Paving Block/Gedung-Sate.jpg'
   },
   {
     id: 4,
     namaProduk: 'Truepave',
     namaProyek: 'Alun-alun Wado',
     tempatProyek: 'Jawa Barat',
-    gambar: '/images/proyek/Paving Block/Alun-Alun Wado.jpg'
+    gambar: '/images/proyek/Paving Block/Alun-Alun-Wado.jpg'
   },
   {
     id: 5,
@@ -169,17 +180,17 @@ const videoTestimonials = [
   {
     id: 4,
     title: 'Testimoni Customer di Pameran Building Technology EXPO',
-    youtubeId: 'KfRpNP59QmU',
+    youtubeId: 'Win66lulRJA',
     watchText: '',
     watchLink: '/testimonial/4'
   },
-  {
-    id: 5,
-    title: 'Testimoni Customer di Pameran Building Technology EXPO',
-    youtubeId: '725AGp2ou1Y',
-    watchText: '',
-    watchLink: '/testimonial/5'
-  },
+  // {
+  //   id: 5,
+  //   title: 'Testimoni Customer di Pameran Building Technology EXPO',
+  //   youtubeId: '725AGp2ou1Y',
+  //   watchText: '',
+  //   watchLink: '/testimonial/5'
+  // },
   // {
   //   id: 6,
   //   title: 'Testimoni Customer di Pameran Building Technology EXPO',
@@ -290,6 +301,7 @@ const terbaruList = [
     link: "/blog/artikel/detail-d"
   },
 ];
+
 
 
 export default function Beranda() {
@@ -430,7 +442,7 @@ useEffect(() => {
    // Check mobile device
    useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
+      setIsMobile(window.innerWidth < 430);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -554,7 +566,7 @@ const ProyekNextArrow = ({ onClick }) => (
     className={`absolute ${isMobile ? 'right-2' : 'right-[-4.5rem] 2xl:right-[-7rem]'} 2xl:top-100 top-1/2 -translate-y-1/2 z-10 bg-[#0B1F3A] hover:bg-[#0B203F] text-white p-2 sm:p-3 2xl:p-5 rounded-none shadow-lg transition-all duration-300`}
     aria-label="Next projects"
   >
-    <FaChevronRight className="text-sm sm:text-base 2xl:text-2xl" />
+    <FaChevronRight className="text-sm sm:text-base 2xl:text-2xl"/>
   </button>
 );
 
@@ -609,11 +621,12 @@ return (
 <HeroSection 
   slides={heroSlides.map(slide => ({
     ...slide,
+    location: slide.location // Pastikan properti location diteruskan
   }))}
   currentSlide={currentSlide}
   autoPlayDelay={5000}
   onSlideChange={handleSlideChange}
-  onSlideClick={handleHeroSlideClick} // Tambahkan ini
+  onSlideClick={handleHeroSlideClick}
 />
 
   {/* Slide Indicators */}
@@ -656,7 +669,7 @@ return (
         }}
       >
         <div className="flex flex-col items-center group text-[#333333] cursor-pointer">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 2xl:w-45 2xl:h-45 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
+          <div className="icon-rounded-product relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 2xl:w-45 2xl:h-45 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
             <Image
               src={category.icon}
               alt={category.name}
@@ -699,10 +712,10 @@ return (
     <section className="py-6 sm:py-10 relative mt-10 mb-6">
   <div className="w-full">
     {/* Video Utama */}
-    <div className="max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
+    <div className="title-vid1 max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
     
     {/* Kiri: Judul */}
-    <div className="pl-4 border-l-4 border-[#0B203F]">
+    <div className="title-vidtesti pl-4 border-l-4 border-[#0B203F]">
       <h2 className="text-left text-xl sm:text-2xl 2xl:text-[2rem] font-medium leading-tight uppercase">
         VIDEO TESTIMONIAL PRODUK
       </h2>
@@ -755,24 +768,24 @@ return (
     </div>
 
    {/* Daftar Video Lainnya dengan Slider */}
-<div className="container-slider-vd relative">
+<div className="container-slider-vd relative 2xl:px-5">
   {/* Navigation buttons */}
   <button 
     onClick={prevVideoSlide}
     disabled={currentVideoSlide === 0}
-    className="prevVideoSlide absolute left-0 top-22 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+    className="prevVideoSlide absolute left-0 top-22 2xl:top-30 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
   >
-    <FaChevronLeft className="w-5 h-5" />
+    <FaChevronLeft className="w-5 h-5 2xl:w-8 2xl:h-8" />
   </button>
 
   <div 
     ref={videoSliderRef}
-    className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
+    className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 2xl:gap-25"
   >
     {videoTestimonials.map((video) => (
       <div key={video.id} className="cover-video group cursor-pointer snap-start">
         <div 
-          className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full h-[150px]"
+          className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full xl:h-[150px] 2xl:h-[222px] 2xl:w-100"
           onClick={() => handleVideoSelect(video.youtubeId)}
         >
             <Image 
@@ -792,7 +805,7 @@ return (
         </div>
         
         <div className="video-title mt-3 text-left">
-          <p className="text-sm font-medium text-gray-800 line-clamp-2">{video.title}</p>
+          <p className="text-sm 2xl:text-md font-medium text-gray-800 line-clamp-2">{video.title}</p>
           <a 
             href={video.watchLink}
             target="_blank"
@@ -809,9 +822,9 @@ return (
   <button 
     onClick={nextVideoSlide}
     disabled={currentVideoSlide >= totalVideoSlides - visibleVideoSlides}
-    className="nextVideoSlide absolute right-0 top-22 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+    className="nextVideoSlide absolute right-0 top-22 2xl:top-30 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
   >
-    <FaChevronRight className="w-5 h-5" />
+    <FaChevronRight className="w-5 h-5 2xl:w-8 2xl:h-8" />
   </button>
 </div>
 
@@ -830,9 +843,9 @@ return (
   
          {/* Terbaru Section */}
          <section className="py-10 px-4 sm:px-10 bg-[#ECEEF0]">
-  <div className="max-w-6xl mx-auto">
+  <div className="mx-auto max-w-screen-2xl xl:px-4 2xl:mb-8">
     <div className="flex justify-center gap-2 items-center mb-8 px-2">
-      <h2 className="text-xl sm:text-2xl font-medium">TERBARU</h2>
+      <h2 className="text-xl sm:text-2xl 2xl:text-[2rem] font-medium">TERBARU</h2>
       <p className="text-blue-500 text-sm sm:text-base cursor-pointer hover:underline"><a href='/blog/artikel'>Lihat Semua</a></p>
     </div>
     
@@ -840,19 +853,17 @@ return (
   {terbaruList.map((item) => (
     <Link key={item.id} href={item.link} className="flex after:w-[1px] after:bg-[#D7D7D7] hover:bg-white transition rounded-md">
       <div className="flex p-4 cursor-pointer">
-        <div className="relative w-20 h-20 mr-4 flex-shrink-0">
+        <div className="relative w-20 h-20 2xl:w-30 2xl:h-30 mr-4 flex-shrink-0">
           <Image
             src={item.image}
             alt={item.title}
-            width={80}
-            height={80}
+            fill
             className="object-cover"
-            style={{ width: '80px', height: '80px' }}
           />
         </div>
         <div className="flex-1">
-          <h3 className="text-sm font-medium mb-1">{item.title}</h3>
-          <p className="text-xs text-gray-600">{item.desc}</p>
+          <h3 className="xl:text-sm 2xl:text-lg font-medium mb-1">{item.title}</h3>
+          <p className="xl:text-xs text-sm text-gray-600">{item.desc}</p>
         </div>
       </div>
     </Link>
@@ -863,8 +874,8 @@ return (
   
        {/* E-Commerce Section */}
         <section className="py-20 text-center">
-        <h2 className="text-2xl font-semibold mb-4">CISANGKAN OFFICIAL E-COMMERCE</h2>
-        <div className="flex justify-center mb-20">
+        <h2 className="xl:text-2xl font-semibold mb-4 2xl:text-3xl 2xl:mt-5">CISANGKAN OFFICIAL E-COMMERCE</h2>
+        <div className="logo-ecommerce flex justify-center mb-20">
   <a 
     href="https://www.tokopedia.com/cisangkan" 
     target="_blank" 
@@ -874,7 +885,7 @@ return (
     <img 
       src="/tokopedia-logo.png" 
       alt="Tokopedia" 
-      className="h-15" 
+      className="xl:h-15 2xl:h-20" 
     />
   </a>
 </div>
@@ -903,9 +914,9 @@ return (
     href={item.link}
     key={i}
     passHref
-    className='w-60 block transition-shadow duration-300'
+    className='xl:w-60 2xl:w-88 block transition-shadow duration-300'
   >
-       <div className="section-container relative w-full h-60 mb-6 rounded-none overflow-hidden">
+       <div className="section-container relative xl:w-full xl:h-60 2xl:w-[22rem] 2xl:h-100 mb-6 rounded-none overflow-hidden 2xl:mt-9">
       <Image
         src={item.image}
         alt={item.title}
@@ -916,9 +927,9 @@ return (
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
       />
     </div>
-        <h3 className="text-sm font-semibold mb-2">{item.title}</h3>
-        <p className="text-base text-gray-600 leading-6">{item.desc}</p>
-        <div className="text-blue-500 text-xs mt-1 hover:text-blue-700 transition-colors">
+        <h3 className="xl:text-sm 2xl:text-lg font-semibold mb-2">{item.title}</h3>
+        <p className="xl:text-base 2xl:text-md text-gray-600 leading-6">{item.desc}</p>
+        <div className="text-blue-500 xl:text-xs 2xl:text-sm mt-1 hover:text-blue-700 transition-colors">
           Baca lebih banyak
         </div>
     </Link>

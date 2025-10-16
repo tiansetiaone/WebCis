@@ -1,13 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
+import '@/app/style/ProductContent.css';
 
 export const PavingBlockContent = () => (
   <>
     {/* Spesifikasi Teknis */}
     <section className="mb-10">
-      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
-      <ul className="text-sm leading-relaxed space-y-1 ps-9 list-none">
+      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">SPESIFIKASI TEKNIS :</h2>
+      <ul className="padding-pv text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-none">
         <li className="ps-3 list-disc">Bahan dasar campuran Beton</li>
-        <li className="ps-3 list-disc">Toleransi dimensi mengacu pada B56717-1 : 1993</li>
+        <li className="ps-3 list-disc">Toleransi dimensi mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">B56717-1 : 1993</Link></li>
         <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
           <li className="contents">
             <span>- Panjang/Lebar</span>
@@ -18,22 +20,22 @@ export const PavingBlockContent = () => (
             <span>: 3 mm</span>
           </li>
         </ul>
-        <li className="ps-3 list-disc">Mutu Produk mengacu pada SNI 03-0691-1996</li>
+        <li className="ps-3 list-disc">Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 03-0691-1996</Link></li>
         <li className="ps-3 list-disc">Kategori Peringkat 1</li>
         <li className="ps-3 list-disc">Kuat Tekan rata-rata :</li>
         <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
           <li className="contents">
             <span>- Tebal 6 & 8 cm</span>
-            <span>= 450 kg/cm2</span>
+            <span>= <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">450 kg/cm2</Link></span>
           </li>
           <li className="contents">
             <span>- Tebal 10 cm</span>
-            <span>= 500 kg/cm2</span>
+            <span>= <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">500 kg/cm2</Link></span>
           </li>
         </ul>
         <li className="ps-3 list-disc">Penyerapan air rata-rata 3%</li>
         <li className="ps-3 list-disc">Ketahanan aus rata-rata 0.09 mm/menit</li>
-        <li className="ps-3 list-disc">Kuat lentur tipe Truepave (AS/NZS 4456.5:2003) 50 Kgf/cm2</li>
+        <li className="ps-3 list-disc"><Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Kuat lentur</Link> tipe Truepave (AS/NZS 4456.5:2003) 50 Kgf/cm2</li>
         <li className="ps-3 list-disc">Diproduksi menggunakan mesin otomatis dengan sistem Vibrating dan Compressing</li>
         <li className="ps-3 list-disc">Proses Produksi dilengkapi dengan alat pengendali kandungan air (Water Moisture Control) dan teknologi pengembunan (Fogging)</li>
         <li className="ps-3 list-disc">Produk terdiri dari banyak varian warna</li>
@@ -56,39 +58,39 @@ export const PavingBlockContent = () => (
 
     {/* Ketentuan Pemasangan */}
     <section className="mb-10">
-      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">KETENTUAN PEMASANGAN :</h2>
-      <ul className="text-sm leading-relaxed space-y-1 ps-9 list-none">
+      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">KETENTUAN PEMASANGAN :</h2>
+      <ul className="padding-pv text-sm leading-relaxed space-y-1 ps-9 list-none 2xl:text-base">
         <li className="ps-3 list-disc">Pasir alas harus lolos saringan 5mm</li>
         <li className="ps-3 list-disc">Pasir pengisi harus lolos saringan 4mm</li>
       </ul>
     </section>
 
     {/* Gambar */}
-    <section className="flex justify-center overflow-x-auto mb-20">
-      <table className="table-auto text-sm border border-collapse border-gray-400">
-        <thead className="bg-[#0B203F] text-white text-sm text-center">
+<section className="responsive-table mb-20">
+  <table>
+        <thead className="bg-[#0B203F] text-white text-sm 2xl:text-base text-center">
           <tr>
-            <th className="border border-gray-400 px-4 py-2 align-middle" rowSpan={2}>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4 align-middle" rowSpan={2}>
               Sieve (mm)
             </th>
-            <th className="border border-gray-400 px-4 py-2" colSpan={2}>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4" colSpan={2}>
               Pasir Alas / Sand Bedding
             </th>
-            <th className="border border-gray-400 px-4 py-2 align-middle" rowSpan={2}>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4 align-middle" rowSpan={2}>
               Sieve (mm)
             </th>
-            <th className="border border-gray-400 px-4 py-2" colSpan={2}>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4" colSpan={2}>
               Joint Filler / Sand Filler
             </th>
           </tr>
           <tr>
-            <th className="border border-gray-400 px-4 py-2">Min %</th>
-            <th className="border border-gray-400 px-4 py-2">Max %</th>
-            <th className="border border-gray-400 px-4 py-2">Min %</th>
-            <th className="border border-gray-400 px-4 py-2">Max %</th>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4">Min %</th>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4">Max %</th>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4">Min %</th>
+            <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4">Max %</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="2xl:text-base">
           <tr>
             <td className="border border-gray-400 px-4 py-2">12.5</td>
             <td className="border border-gray-400 px-4 py-2">-</td>
@@ -162,7 +164,7 @@ export const PavingBlockContent = () => (
             <td className="border border-gray-400 px-4 py-2">0</td>
           </tr>
         </tbody>
-        <tfoot>
+        <tfoot className="2xl:text-base">
           <tr>
             <td className="border border-gray-400 px-4 py-2 text-center italic" colSpan={6}>
               Batas kandungan air pasir alas 6–8%, dan maks 1% untuk pasir pengisi

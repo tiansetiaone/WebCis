@@ -4,10 +4,10 @@ export const UtilityContent = () => (
   <>
    {/* Spesifikasi Teknis */}
 <section className="mb-10">
-  <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">
+  <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">
     SPESIFIKASI TEKNIS CONCRETE PIPE:
   </h2>
-  <ul className="text-sm leading-relaxed space-y-1 ps-9 list-none">
+  <ul className="padding-pv text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-none">
     <li className="ps-3 list-disc">Bahan dasar campuran beton</li>
     <li className="ps-3 list-disc">Mutu beton K - 225</li>
     <li className="ps-3 list-disc">Sistem produksi vibrated compaction system</li>
@@ -16,26 +16,26 @@ export const UtilityContent = () => (
 
 
    {/* Tabel Buis Beton */}
-<section className="flex justify-center overflow-x-auto mb-20">
-  <table className="table-auto text-sm border border-collapse border-gray-400">
-   <thead className="bg-[#0B203F] text-white text-sm text-center">
+<section className="responsive-table mb-20">
+  <table>
+ <thead>
       <tr>
-        <th className="border border-gray-400 px-4 py-2">Diameter dalam (mm)</th>
-        <th className="border border-gray-400 px-4 py-2">Diameter luar (mm)</th>
-        <th className="border border-gray-400 px-4 py-2">Panjang bentang (mm)</th>
-        <th className="border border-gray-400 px-4 py-2">Beban Ultimate (Lbs)</th>
-        <th className="border border-gray-400 px-4 py-2">Beban Ultimate (Kg)</th>
-        <th className="border border-gray-400 px-4 py-2">Tinggi timbunan (cm)</th>
+        <th>Diameter dalam (mm)</th>
+        <th>Diameter luar (mm)</th>
+        <th>Panjang bentang (mm)</th>
+        <th>Beban Ultimate (Lbs)</th>
+        <th>Beban Ultimate (Kg)</th>
+        <th>Tinggi timbunan (cm)</th>
       </tr>
     </thead>
-    <tbody className="text-center">
+    <tbody>
       <tr>
-        <td className="border border-gray-400 px-4 py-2">200</td>
-        <td className="border border-gray-400 px-4 py-2">270</td>
-        <td className="border border-gray-400 px-4 py-2">1000</td>
-        <td className="border border-gray-400 px-4 py-2">757</td>
-        <td className="border border-gray-400 px-4 py-2">343.37</td>
-        <td className="border border-gray-400 px-4 py-2">70.65</td>
+        <td>200</td>
+        <td>270</td>
+        <td>1000</td>
+        <td>757</td>
+        <td>343.37</td>
+        <td>70.65</td>
       </tr>
       <tr>
         <td className="border border-gray-400 px-4 py-2">300</td>
@@ -90,10 +90,10 @@ export const UtilityContent = () => (
 </section>
 
 <section className="mb-20">
-  <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">
+  <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">
     SPESIFIKASI TEKNIS CISWELL (Sumur Resapan):
   </h2>
-  <ul className="text-sm leading-relaxed space-y-1 ps-9 list-none">
+  <ul className="padding-pv text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-none">
     <li className="ps-3 list-disc">Bahan dasar beton non pasir</li>
     <li className="ps-3 list-disc">Warna Natural (Abu-abu)</li>
     <li className="ps-3 list-disc">Dimensi Tebal 12,5 cm, Tinggi 50 cm, dan Diameter dalam 100 cm sistem produksi vibrated compaction system</li>

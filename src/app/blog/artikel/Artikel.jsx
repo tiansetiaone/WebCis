@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import '@/app/style/Artikel.css';
 
 const artikelList = [
    {
@@ -53,22 +54,6 @@ const artikelList = [
     deskripsi: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun perjalanannya membangun Indonesia melalui inovasi dan kualitas di industri beton pracetak. Dengan mengusung semangat 'Bangga Berkarya, Bangga Indonesia', perusahaan ini menegaskan kembali komitmennya sebagai bagian dari kekuatan pembangunan nasional.",
     gambar: "/images/ultah50.jpg",
   },
-  // {
-  //   id: 4,
-  //   judul: "CIS Flashing: Solusi Flashing Modern",
-  //   tanggal: "16 Juni 2025",
-  //   url: "/blog/artikel/detail-c",
-  //   deskripsi: "PT Cisangkan meluncurkan produk genteng beton terbaru dengan teknologi anti bocor yang lebih baik. Produk ini dirancang khusus untuk iklim tropis Indonesia dengan daya tahan yang lebih kuat.",
-  //   gambar: "/images/inovasi-genteng.jpg",
-  // },
-  // {
-  //   id: 4,
-  //   judul: "Penghargaan Green Industry 2025",
-  //   tanggal: "5 April 2025",
-  //   url: "/blog/artikel/detail-d",
-  //   deskripsi: "PT Cisangkan meraih penghargaan Green Industry 2025 untuk kategori material bangunan berkelanjutan. Penghargaan ini diberikan atas komitmen perusahaan dalam mengurangi jejak karbon.",
-  //   gambar: "/images/green-award.jpg",
-  // },
   // {
   //   id: 5,
   //   judul: "Workshop Konstruksi Modern",
@@ -124,9 +109,9 @@ export default function Artikel() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-25">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/artikel-4.jpg"
           alt="Banner Artikel"
@@ -146,16 +131,16 @@ export default function Artikel() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <nav className="2xl:text-lg flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
           <Link href="/blog/artikel" className="text-[#2D5DA6] font-bold">Artikel</Link>
           <Link href="/blog/testimoni" className="text-[#333] hover:text-[#2D5DA6]">Testimoni</Link>
         </nav>
       </div>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
         <div className="gap-6 items-start mb-10">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5 2xl:text-2xl">
             ARTIKEL
           </h2>
         </div>
@@ -176,12 +161,12 @@ export default function Artikel() {
                 className="flex flex-col sm:flex-row items-start border-b border-[#CCCCCC] pb-10 gap-6"
               >
                 {/* Gambar */}
-                <div className="w-full sm:w-[200px] h-[200px] bg-gray-200 flex justify-center items-center">
+                <div className="w-full sm:w-[200px] h-[200px] 2xl:w-[250px] 2xl:h-[250px] bg-gray-200 flex justify-center items-center">
                   {item.gambar ? (
                     <img
                       src={item.gambar}
                       alt={item.judul}
-                      className="w-full h-full object-cover"
+                      className="thumb-artikel w-full h-full object-cover"
                     />
                   ) : (
                     <svg
@@ -198,18 +183,18 @@ export default function Artikel() {
 
                 {/* Konten */}
                 <div className="flex-1">
-                  <h3 className="text-xl font-normal text-[#1E1E1E] mb-2">
+                  <h3 className="text-lg 2xl:text-xl font-normal text-[#1E1E1E] mb-2">
                     {item.judul}
                   </h3>
-                  <p className="text-sm text-[#2957A4] mb-2">
+                  <p className="text-sm 2xl:text-base text-[#2957A4] mb-2">
                     {item.tanggal}
                   </p>
-                  <p className="text-sm text-justify text-[#333333] mb-3">
+                  <p className="text-sm 2xl:text-base text-justify text-[#333333] mb-3">
                     {item.deskripsi}
                   </p>
                   <Link
                     href={item.url}
-                    className="text-sm text-[#2957A4] font-semibold hover:underline"
+                    className="text-sm 2xl:text-base text-[#2957A4] font-semibold hover:underline"
                   >
                     Lihat Detail &gt;&gt;
                   </Link>
@@ -225,7 +210,7 @@ export default function Artikel() {
             <button
               onClick={handlePrevPage}
               disabled={currentPage === 1}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Sebelumnya
             </button>
@@ -234,7 +219,7 @@ export default function Artikel() {
               <button
                 key={page}
                 onClick={() => handlePageChange(page)}
-                className={`px-3 py-1 border border-gray-300 rounded-none text-xs ${
+                className={`px-3 py-1 border border-gray-300 rounded-none text-xs 2xl:text-sm ${
                   currentPage === page 
                     ? 'bg-[#0B203F] text-white' 
                     : 'text-gray-700 hover:bg-gray-100'
@@ -247,7 +232,7 @@ export default function Artikel() {
             <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Berikutnya
             </button>

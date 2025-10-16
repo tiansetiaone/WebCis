@@ -16,17 +16,18 @@ export default function ProductSidebar({ onItemChange }) {
   });
   const [expandedSubItems, setExpandedSubItems] = useState({
     "Concrete Roof": {
-      "Flat Tile": {
-        "Victoria Series": false,
-      },
-      "Genteng Gelombang": {},
+      "Flat Tile": false,
+      "Genteng Gelombang": false,
     },
     "Paving Block": {},
     "Concrete Block": {
       "Ventilation Block": {},
     },
-    Utility: {},
+    Utility: {
+      "Concrete Pipe": false,
+    },
   });
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   // Definisikan productConfig
   const productConfig = {
@@ -38,7 +39,7 @@ export default function ProductSidebar({ onItemChange }) {
     ],
     subProducts: {
       "Concrete Roof": [
-        { name: "Neo Solar System", url: "/produk/detail?product=Neo Solar System&category=Concrete Roof" },
+        { name: "Genteng Neo (Premium)", url: "/produk/detail?product=Genteng Neo (Premium)&category=Concrete Roof" },
         {
           name: "Flat Tile",
           url: "#",
@@ -67,6 +68,23 @@ export default function ProductSidebar({ onItemChange }) {
             { name: "Majestic", url: "/produk/detail-cr?product=Majestic&category=Concrete Roof" },
           ],
         },
+        // {
+        //   name: "Solusi Bocor",
+        //   url: "#",
+        //   subItems: [
+        // { name: "Dry System", url: "/produk/detail-cr?product=Dry System&category=Concrete Roof" },
+        // { name: "CIS Flashing", url: "/produk/detail-cr?product=CIS Flashing&category=Concrete Roof" },
+        //   ],
+        // },
+        //         {
+        //   name: "Cat Genteng",
+        //   url: "#",
+        //   subItems: [
+        // { name: "Water Base", url: "/produk/detail-cr?product=Water Base&category=Concrete Roof" },
+        // { name: "Solvent Base", url: "/produk/detail-cr?product=Solvent Base&category=Concrete Roof" },
+        //   ],
+        // },
+        // { name: "Panel Surya", url: "/produk/detail-cr?product=Panel Surya&category=Concrete Roof" },
       ],
       "Paving Block": [
         { name: "Square Set", url: "/produk/detail-pb?product=Square Set&category=Paving Block" },
@@ -86,9 +104,19 @@ export default function ProductSidebar({ onItemChange }) {
         { name: "Ventilation Block", url: "/produk/detail-cb?product=Ventilation Block&category=Concrete Block" },
         { name: "Ventilation Block 3D", url: "/produk/detail-cb?product=Ventilation Block 3D&category=Concrete Block" },
       ],
-      Utility: [
-        { name: "Concrete Pipe", url: "/produk/detail-ut1?product=Concrete Pipe&category=Utility" },
-        { name: "Ciswell", url: "/produk/detail-ut2?product=Ciswell&category=Utility" },
+      "Utility": [
+        {
+          name: "Concrete Pipe",
+          url: "#",
+          subItems: [
+        { name: "High Pressure", url: "/produk/detail-ut1?product=High Pressure&category=Utility" },
+        { name: "Low Pressure", url: "/produk/detail-ut1?product=Low Pressure&category=Utility" },
+          ],
+        },
+        // { name: "U-Ditch", url: "/produk/detail-ut1?product=U-Ditch&category=Utility" },
+        // { name: "Tutup", url: "/produk/detail-ut1?product=Tutup&category=Utility" },
+        // { name: "Box Culvert", url: "/produk/detail-ut1?product=Box Culvert&category=Utility" },
+        // { name: "Sumur Resapan", url: "/produk/detail-ut2?product=Sumur Resapan&category=Utility" },
       ],
     },
   };
@@ -164,6 +192,7 @@ export default function ProductSidebar({ onItemChange }) {
       ...Object.fromEntries(Object.keys(prev).map(key => [key, false])),
       [item]: true,
     }));
+    setIsMobileDropdownOpen(false); // Tutup dropdown mobile setelah memilih
     navigateTo(url);
   }, [getMainProductUrl, navigateTo]);
 
@@ -171,6 +200,7 @@ export default function ProductSidebar({ onItemChange }) {
     e.preventDefault();
     const url = getSubProductUrl(category, subItem);
     setActiveSubItem(subItem);
+    setIsMobileDropdownOpen(false); // Tutup dropdown mobile setelah memilih
     navigateTo(url);
   }, [getSubProductUrl, navigateTo]);
 
@@ -183,7 +213,7 @@ export default function ProductSidebar({ onItemChange }) {
         : expandedSubItems[category]?.[item.name];
 
       return (
-        <li key={item.name}>
+        <li key={item.name} className={parentName ? "ml-4" : ""}>
           {hasSubItems ? (
             <>
               <div
@@ -210,7 +240,7 @@ export default function ProductSidebar({ onItemChange }) {
                     }));
                   }
                 }}
-                className={`flex items-center justify-between cursor-pointer ${
+                className={`flex items-center justify-between cursor-pointer py-2 ${
                   activeSubItem === item.name ? "text-[#2957A4] font-medium" : "hover:text-[#2957A4]"
                 }`}
               >
@@ -219,7 +249,7 @@ export default function ProductSidebar({ onItemChange }) {
               </div>
 
               {isExpanded && hasSubItems && (
-                <ul className="ml-4 mt-1 space-y-2">
+                <ul className="ml-4 mt-1">
                   {renderSubItems(item.subItems, category, item.name)}
                 </ul>
               )}
@@ -232,7 +262,7 @@ export default function ProductSidebar({ onItemChange }) {
                 setActiveSubItem(item.name);
                 navigateTo(item.url);
               }}
-              className={`block cursor-pointer ${
+              className={`block cursor-pointer py-2 ${
                 activeSubItem === item.name ? "text-[#2957A4] font-medium" : "hover:text-[#2957A4]"
               }`}
             >
@@ -244,10 +274,11 @@ export default function ProductSidebar({ onItemChange }) {
     });
   }, [activeSubItem, expandedSubItems, navigateTo]);
 
-  return (
-    <aside className="w-full lg:w-1/6 lg:sticky lg:top-[6.5rem] lg:h-[calc(100vh-6.5rem)] lg:overflow-y-auto pr-5">
-      <h1 className="text-lg font-medium mb-4 pb-2">Produk</h1>
-      <ul className="space-y-2 text-sm">
+  // Render Desktop Sidebar
+  const renderDesktopSidebar = () => (
+    <aside className="hidden lg:block w-full lg:w-1/6 lg:sticky lg:top-[6.5rem] lg:h-[calc(100vh-6.5rem)] lg:overflow-y-auto pr-5">
+      <h1 className="text-lg font-medium mb-4 pb-2 2xl:text-xl">Produk</h1>
+      <ul className="space-y-2 text-sm 2xl:text-base">
         {getMainProducts().map((item) => (
           <li key={item}>
             <div className="flex items-center justify-between">
@@ -277,7 +308,7 @@ export default function ProductSidebar({ onItemChange }) {
             </div>
 
             {expandedItems[item] && (
-              <ul className="ml-4 mt-2 space-y-3 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
+              <ul className="ml-4 mt-2 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
                 {renderSubItems(productConfig.subProducts[item], item)}
               </ul>
             )}
@@ -285,5 +316,70 @@ export default function ProductSidebar({ onItemChange }) {
         ))}
       </ul>
     </aside>
+  );
+
+  // Render Mobile Dropdown
+  const renderMobileDropdown = () => (
+    <div className="lg:hidden mb-4">
+      {/* Dropdown Trigger */}
+      <div 
+        className="flex items-center justify-between p-3 bg-white border border-gray-300 rounded-md shadow-sm cursor-pointer"
+        onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+      >
+        <span className="font-medium">{activeItem}</span>
+        <span>{isMobileDropdownOpen ? "▲" : "▼"}</span>
+      </div>
+
+      {/* Dropdown Content */}
+      {isMobileDropdownOpen && (
+        <div className="mt-1 bg-white border border-gray-300 rounded-md shadow-md overflow-hidden">
+          <ul className="py-2">
+            {getMainProducts().map((item) => (
+              <li key={item}>
+                <div className="flex items-center justify-between px-3 py-2 hover:bg-gray-100">
+                  <a
+                    href={getMainProductUrl(item)}
+                    onClick={(e) => handleMainItemClick(item, e)}
+                    className={`w-full text-left ${
+                      activeItem === item 
+                        ? "text-[#2957A4] font-semibold" 
+                        : "text-gray-700"
+                    }`}
+                  >
+                    {item}
+                  </a>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setExpandedItems(prev => ({
+                        ...prev,
+                        [item]: !prev[item],
+                      }));
+                    }}
+                    className="px-2 text-gray-500 hover:text-gray-700"
+                  >
+                    <span style={{ fontSize: "0.6rem" }}>{expandedItems[item] ? "▼" : "▶"}</span>
+                  </button>
+                </div>
+
+                {expandedItems[item] && (
+                  <ul className="ml-4 mt-1 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-2">
+                    {renderSubItems(productConfig.subProducts[item], item)}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+
+  return (
+    <>
+      {renderMobileDropdown()}
+      {renderDesktopSidebar()}
+    </>
   );
 }

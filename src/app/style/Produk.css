@@ -1,0 +1,63 @@
+
+@media only screen and (max-width: 430px) {
+    .body-container {
+        padding-inline: 0;
+    }
+    .image-container {
+        min-height: 0;
+    }
+    .snap-start {
+    scroll-snap-align: start;
+    padding-inline-start: 5rem;
+    padding-inline-end: 18rem;
+
+    }
+    .grid-flow-col {
+    gap: 11rem;
+    padding-inline-start: 4rem;
+    margin-left: -20px;
+}
+    .padding-pv{
+        padding-left: 1rem;
+    }
+    .padding-cb {
+        padding-left: 1rem;
+    }
+    .padding-cb2 {
+        padding-inline: 0;
+    }
+    .pic-container {
+        padding-inline: 0;
+    }
+    .ribbon-container {
+        padding-inline: 2rem;
+    }
+    .thumbnail-container {
+        justify-items: center;
+    }
+    .ribbon-container2 {
+    padding-inline: 1rem;
+    width: 100%;
+    text-align: center;
+    }
+    .max-image-container {
+        margin-top: 2rem;
+    }
+    .list-spek {
+        width: 10rem;
+    }
+    .spek-container {
+        margin-top: 2rem;
+    }
+    .button-count {
+        padding-inline: 1rem;
+    }
+    .aksesoris-container {
+        margin-top: -1rem;
+    }
+    .slider-mobile {
+        gap: 11rem;
+        padding-inline-start: 4rem;
+        margin-left: -8px;
+    }
+}

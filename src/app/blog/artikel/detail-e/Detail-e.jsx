@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { FaPlay, FaTimes } from 'react-icons/fa';
+import '@/app/style/Blog.css';
 
 
 // Video Data
@@ -138,7 +139,7 @@ export default function DetailE() {
                   <FaPlay className="w-8 h-8 text-[#0B1F3A] pl-1" />
                 </div>
               </div>
-
+              
               <Image 
                 src={data.videoThumbnail}
                 alt={data.judul}

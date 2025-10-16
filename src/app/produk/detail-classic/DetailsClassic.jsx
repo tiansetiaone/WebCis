@@ -384,7 +384,7 @@ const calculateRequirement = () => {
       </div>
       <div className='pl-4 px-44'>
         <a
-          href="/perusahaan/katalog"
+          href="/informasi/katalog#brosur-section"
           className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"
         >
           <FaCalculator className="text-lg" />

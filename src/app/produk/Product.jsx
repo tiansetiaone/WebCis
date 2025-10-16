@@ -12,6 +12,7 @@ import Image from 'next/image';
 import BannerProduk from "../components/BannerProduk";
 import ProductSidebar from "../components/ProductSidebar";
 import { useSearchParams } from "next/navigation";
+import '@/app/style/Produk.css';
 
 export default function Product() {
   const searchParams = useSearchParams();
@@ -60,7 +61,7 @@ export default function Product() {
   const getDetailPath = (category, productName) => {
   if (category === 'Concrete Roof') {
     // Handle Neo Solar System khusus
-    if (productName === 'Neo Solar System') return 'detail';
+    if (productName === 'Genteng Neo (Premium)') return 'detail';
     
     // Handle Victoria Series
     if (productName.startsWith('Victoria ')) return 'detail-victoria';
@@ -119,33 +120,33 @@ export default function Product() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800">
       <BannerProduk kategori={activeItem} />
 
       <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">{activeItem.toUpperCase()}</div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar onItemChange={setActiveItem} />
 
-        <main className="w-full lg:w-5/6 space-y-8 ps-5 pe-5">
+        <main className="w-full lg:w-5/6 space-y-8 ps-5 pe-5 2xl:ps-4 2xl:pe-12">
           {getCurrentContent()}
 
           <section className="mb-10 relative">
-            <h2 className="text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">TYPE PRODUK :</h2>
+            <h2 className="text-xl 2xl:text-2xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">TYPE PRODUK :</h2>
             <div className="relative">
               <button
                 onClick={prevSlide}
                 disabled={currentSlide === 0}
-                className="absolute left-[1.5rem] top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed ml-[-26px]"
+                className="absolute left-[1.5rem] top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-10 h-10 2xl:w-14 2xl:h-14 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed ml-[-26px]"
               >
-                <FaChevronLeft className="w-5 h-5" />
+                <FaChevronLeft className="w-5 h-5 2xl:w-8 2xl:h-8" />
               </button>
   <div
                 ref={productSliderRef}
-                className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7 ml-[-29px] mr-[-2rem]"
+                className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7 2xl:gap-5 ml-[-29px] mr-[-2rem]"
               >
                 {getCurrentProducts().map((product) => (
-                  <div key={product.name} className="snap-start min-w-0 ps-12.5 group">
+                  <div key={product.name} className="snap-start min-w-0 ps-12.5 2xl:ps-22 group">
 <Link 
   href={`/produk/${getDetailPath(activeItem, product.name)}?product=${
     encodeURIComponent(
@@ -158,8 +159,8 @@ export default function Product() {
   }&category=${encodeURIComponent(activeItem)}`}
   className="block"
 >
-                      <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
-<div className="relative w-full h-45 flex items-center justify-center bg-white overflow-hidden">
+                      <div className="w-50 2xl:w-65 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
+<div className="relative w-full h-45 2xl:h-55 flex items-center justify-center bg-white overflow-hidden">
   {product.image ? (
     <Image
       src={product.image}
@@ -174,7 +175,7 @@ export default function Product() {
     </div>
   )}
 </div>
-                        <div className="w-full text-center text-sm font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
+                        <div className="w-full text-center text-sm 2xl:text-base font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
                           {product.name}
                         </div>
                       </div>
@@ -186,9 +187,9 @@ export default function Product() {
               <button
                 onClick={nextSlide}
                 disabled={currentSlide >= getCurrentProducts().length - visibleSlides}
-                className="absolute right-[-0.2rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute right-[-0.2rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 2xl:w-14 2xl:h-14 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <FaChevronRight className="w-5 h-5" />
+                <FaChevronRight className="w-5 h-5 2xl:w-8 2xl:h-8" />
               </button>
             </div>
           </section>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { FaPlay, FaTimes } from 'react-icons/fa';
+import '@/app/style/Blog.css';
 import { FaAddressBook } from 'react-icons/fa';
 
 
@@ -114,37 +115,37 @@ export default function DetailF() {
         </p>
 
         {/* Grid Kolase + Video */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-start mb-10">
-          {/* Kolase Gambar Kiri */}
-          <div className="grid grid-cols-2 gap-3 flex-1 max-w-lg">
-            <Image src="/images/cis max8.jpeg" alt="Kolase 1" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48" />
-            <Image src="/images/cis max3.jpeg" alt="Kolase 2" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48" />
-            <Image src="/images/cismaxx.jpg" alt="Kolase 3" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48" />
-            <Image src="/images/cis max4.jpeg" alt="Kolase 3" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48" />
-            <Image src="/images/cis max5.jpeg" alt="Kolase 4" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48" />
-            <Image src="/images/cis max6.jpeg" alt="Kolase 4" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48" />
-          </div>
+     <div className="flex flex-col md:flex-row gap-6 justify-center items-start mb-10 custom-kolase-video">
+  {/* Kolase Gambar Kiri */}
+  <div className="grid grid-cols-2 gap-3 flex-1 max-w-lg kolase-wrapper">
+    <Image src="/images/cis max8.jpeg" alt="Kolase 1" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
+    <Image src="/images/cis max3.jpeg" alt="Kolase 2" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
+    <Image src="/images/cismaxx.jpg" alt="Kolase 3" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
+    <Image src="/images/cis max4.jpeg" alt="Kolase 4" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
+    <Image src="/images/cis max5.jpeg" alt="Kolase 5" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
+    <Image src="/images/cis max6.jpeg" alt="Kolase 6" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
+  </div>
 
-          {/* Video Thumbnail Kanan */}
-          <div className="flex-1 max-w-md mx-auto">
-            <div 
-              className="relative w-full aspect-[9/12] cursor-pointer group rounded-2xl overflow-hidden shadow-lg"
-              onClick={() => handleVideoOpen('main')}
-            >
-              <Image 
-                src={data.videoThumbnail}
-                alt={data.judul}
-                fill
-                className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-                  <FaPlay className="w-8 h-8 text-[#0B1F3A] pl-1" />
-                </div>
-              </div>
-            </div>
-          </div>
+  {/* Video Thumbnail Kanan */}
+  <div className="flex-1 max-w-md mx-auto video-wrapper">
+    <div 
+      className="relative w-full aspect-[9/12] cursor-pointer group rounded-2xl overflow-hidden shadow-lg video-container"
+      onClick={() => handleVideoOpen('main')}
+    >
+      <Image 
+        src={data.videoThumbnail}
+        alt={data.judul}
+        fill
+        className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105 video-thumb"
+      />
+      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+        <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md play-btn">
+          <FaPlay className="w-8 h-8 text-[#0B1F3A] pl-1" />
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Deskripsi */}
         <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b mb-5 2xl:text-base">
@@ -155,7 +156,7 @@ Melalui kemitraan ini, Cisangkan dan Maxxi berkomitmen untuk menyediakan produk 
 <br /><br />
 Klik link dibawah untuk mengunduh brosur Bitumen.
           </p>
-                        <div className='pl-0 px-207'>
+                        <div className='unduh-brosur pl-0 px-207'>
                           <a
                             href="/informasi/katalog#brosur-section"
                             className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"

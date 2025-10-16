@@ -132,18 +132,18 @@ export default function DetailsUt2() {
         {currentProduct.category.toUpperCase()}
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar />
         
         <main className="w-full lg:w-5/6 flex flex-col">
           {/* Product Images and Details */}
-          <div className="flex flex-col lg:flex-row gap-8 mb-22">
+          <div className="flex flex-col lg:flex-row gap-8 mb-22 2xl:gap-[14rem]">
             <div className="relative w-full max-w-md">
-              <div className="absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10">
+              <div className="absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10 2xl:text-2xl">
                 {currentProduct.name}
               </div>
               
-              <div className="relative aspect-square bg-white w-full flex items-center justify-center">
+              <div className="relative aspect-square bg-white w-full flex items-center justify-center 2xl:w-160">
                 <Image 
                   src={activeThumbnail.largeImage}
                   alt={`Produk ${currentProduct.name}`} 
@@ -154,11 +154,11 @@ export default function DetailsUt2() {
               </div>
               
               <div className="mt-4">
-                <div className="flex space-x-3">
+                <div className="flex space-x-3 2xl:gap-1">
                   {currentProduct.thumbnails.map((thumbnail) => (
                     <div 
                       key={thumbnail.id}
-                      className={`relative w-16 h-16 rounded-xs overflow-hidden cursor-pointer ${
+                      className={`relative w-16 h-16 2xl:w-30 2xl:h-30 rounded-xs overflow-hidden cursor-pointer ${
                         activeThumbnail.id === thumbnail.id 
                           ? 'ring-4 ring-blue-500' 
                           : 'border border-gray-300'
@@ -183,10 +183,10 @@ export default function DetailsUt2() {
   <section className="mb-14">
     {Object.values(currentProduct.tables).map((table, idx) => (
       <div key={idx} className="mb-8 overflow-x-auto">
-        <h2 className="text-lg font-semibold border-l-4 border-[#0B203F] pl-4 mb-2">{table.title}</h2>
+        <h2 className="text-lg font-semibold border-l-4 border-[#0B203F] pl-4 mb-2 2xl:text-2xl">{table.title}</h2>
         <table className="min-w-full table-auto border border-gray-300 text-sm">
           <thead>
-            <tr className="bg-[#0B203F] text-white text-xs">
+            <tr className="bg-[#0B203F] text-white text-xs 2xl:text-sm">
               {table.headers.map((header, i) => (
                 <th key={i} className="border border-gray-300 px-4 py-2 text-left">{header}</th>
               ))}
@@ -220,15 +220,15 @@ export default function DetailsUt2() {
                 </div>
               </section> */}
 
-              <div className='pl-4 px-44'>
-                <a
-                  href="/informasi/katalog"
-                  className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"
-                >
-                  <FaCalculator className="text-lg" />
-                  Unduh Brosur
-                </a>
-              </div>
+<div className='pl-2 2xl:pl-1'>
+  <a
+    href="/informasi/katalog#brosur-section"
+    className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] inline-flex items-center gap-2"
+  >
+    <FaCalculator className="text-lg" />
+    Unduh Brosur
+  </a>
+</div>
             </div>
           </div>
           

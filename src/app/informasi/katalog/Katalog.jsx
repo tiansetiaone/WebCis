@@ -86,7 +86,7 @@ const verifyEmailActive = async (email) => {
   ];
 
   const brosurList = [
-    { id: 1, nama: "Flyer Atap Bitumen (Asphalt Shingles)", image: "/images/Flyer Bitumen.jpeg", file: "/downloads/brosur/Flyer Atap Bitumen.pdf" },
+    { id: 1, nama: "Flyer Atap Bitumen (Asphalt Shingles)", image: "/images/Flyer Bitumen.png", file: "/downloads/brosur/Flyer Atap Bitumen.pdf" },
     { id: 2, nama: "Flyer Atap Modern", image: "/images/Atap Modern.jpg", file: "/downloads/brosur/Flyer Atap Modern.pdf" },
     { id: 3, nama: "Flyer Roster R-21", image: "/images/Flyer Roster R-21.png", file: "/downloads/brosur/Flyer Roster R-21.pdf" },
     { id: 4, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer-Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},

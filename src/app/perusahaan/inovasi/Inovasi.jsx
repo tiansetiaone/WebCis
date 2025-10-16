@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import '@/app/style/Inovasi.css';
 
 const inovasiList = [
   {
@@ -61,6 +62,7 @@ export default function Inovasi() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const modalRef = useRef(null);
+    const [open, setOpen] = useState(false);
 
   // Konfigurasi pagination
   const itemsPerPage = 5;
@@ -124,9 +126,9 @@ export default function Inovasi() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-25">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/inovasi.jpg"
           alt="Banner Inovasi"
@@ -146,18 +148,64 @@ export default function Inovasi() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-          <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
-          <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-          <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold">Inovasi</Link>
-          <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
-        </nav>
+      {/* Desktop Navbar */}
+      <nav className="hidden sm:flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
+          Tentang Kami
+        </Link>
+        <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+          Sejarah
+        </Link>
+        <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold hover:underline">
+          Inovasi
+        </Link>
+        <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+          Karir
+        </Link>
+      </nav>
+
+      {/* Mobile Navbar */}
+      <div className="sm:hidden flex flex-col text-[1rem] font-light tracking-wide">
+        {/* Judul utama menu */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex justify-between items-center px-4 py-3 bg-[#F2F2F2] text-[#2D5DA6] font-bold hover:underline border-b"
+        >
+          <span>Inovasi</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`w-6 h-6 transform transition-transform ${
+              open ? "rotate-180 text-[#2D5DA6]" : "rotate-0 text-[#2D5DA6]"
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {/* Dropdown list */}
+        {open && (
+          <div className="flex flex-col bg-[#F2F2F2] px-6 py-2 space-y-2">
+            <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
+              Tentang Kami
+            </Link>
+            <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+              Sejarah
+            </Link>
+            <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+              Karir
+            </Link>
+          </div>
+        )}
       </div>
+    </div>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
         <div className="gap-6 items-start mb-5">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase 2xl:text-2xl">
             INOVASI
           </h2>
         </div>
@@ -188,11 +236,11 @@ export default function Inovasi() {
 
                 {/* Konten */}
                 <div className="flex-1">
-                  <h3 className="text-lg font-normal mb-2">{item.judul}</h3>
-                  <p className="text-sm text-justify mb-4">{item.deskripsi}</p>
+                  <h3 className="text-lg font-normal mb-2 2xl:text-xl">{item.judul}</h3>
+                  <p className="text-sm 2xl:text-base text-justify mb-4">{item.deskripsi}</p>
                   <Link
                     href={item.url}
-                    className="text-sm text-blue-700 font-medium hover:underline"
+                    className="text-sm 2xl:text-base text-blue-700 font-medium hover:underline"
                   >
                     Baca lebih banyak &gt;&gt;
                   </Link>
@@ -208,7 +256,7 @@ export default function Inovasi() {
             <button
               onClick={handlePrevPage}
               disabled={currentPage === 1}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Sebelumnya
             </button>
@@ -217,7 +265,7 @@ export default function Inovasi() {
               <button
                 key={page}
                 onClick={() => handlePageChange(page)}
-                className={`px-3 py-1 border border-gray-300 rounded-none text-xs ${
+                className={`px-3 py-1 border border-gray-300 rounded-none text-xs 2xl:text-sm ${
                   currentPage === page 
                     ? 'bg-[#0B203F] text-white' 
                     : 'text-gray-700 hover:bg-gray-100'
@@ -230,7 +278,7 @@ export default function Inovasi() {
             <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Berikutnya
             </button>
