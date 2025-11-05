@@ -41,7 +41,7 @@ const heroSlides = [
     image: '/images/5.jpg',
     mobileImage: '/images/mobile/banner-mb3.png', // Tambahkan ini
     url: '/produk?category=Paving Block',
-    location: ''
+    location: 'test-tag'
   },
 ];
 
