@@ -35,13 +35,13 @@ const heroSlides = [
     image: '/images/1.jpg',
     mobileImage: '/images/mobile/banner-mb1.png', // Tambahkan ini
     url: '/produk?category=Concrete Roof',
-    location: ''
+    location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
     mobileImage: '/images/mobile/banner-mb3.png', // Tambahkan ini
     url: '/produk?category=Paving Block',
-    location: ''
+    location: 'Tag location'
   },
 ];
 
